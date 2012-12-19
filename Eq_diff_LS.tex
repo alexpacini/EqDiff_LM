@@ -1,0 +1,58 @@
+% Template & Design by Alex Pacini
+% Alex Pacini
+% email: alexpacini90@gmail.com
+% skype: alex_pacini
+% blog: http://pacinispace.blogspot.com
+%%
+%%
+% 
+%  * ----------------------------------------------------------------------------
+%  * "THE BEER-WARE LICENSE" (Revision 42):
+%  * <alexpacini90@gmail.com> wrote this file. As long as you retain this notice you
+%  * can do whatever you want with this stuff. If we meet some day, and you think
+%  * this stuff is worth it, you can buy me a beer in return Alex Pacini
+%  * ----------------------------------------------------------------------------
+% 
+
+
+\documentclass[a4paper]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage[pdftex]{graphicx}
+\usepackage[italian,english]{babel}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{url}
+% If the package has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \usepackage{./xx/xx/package}
+
+\pagestyle{headings}
+\graphicspath{{images/}}
+
+\begin{document}
+%Frontespizio
+\include{./frontespizio/frontespizio}
+
+\selectlanguage{italian}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Equazione della Diffusione (Paraboliche)}	\label{sec:diffusion}
+\input{diffusion}
+
+\section{Equazione di Laplace (Ellittiche)}	\label{sec:laplacian}
+\input{laplacian}
+
+\section{Equazione delle Onde (Iperboliche)}	\label{sec:waves}
+\input{waves}
+
+\addcontentsline{toc}{section}{Elenco delle figure}
+\listoffigures
+
+
+\end{document}
