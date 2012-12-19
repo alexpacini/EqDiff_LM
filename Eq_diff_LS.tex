@@ -5,15 +5,6 @@
 % blog: http://pacinispace.blogspot.com
 %%
 %%
-% 
-%  * ----------------------------------------------------------------------------
-%  * "THE BEER-WARE LICENSE" (Revision 42):
-%  * <alexpacini90@gmail.com> wrote this file. As long as you retain this notice you
-%  * can do whatever you want with this stuff. If we meet some day, and you think
-%  * this stuff is worth it, you can buy me a beer in return Alex Pacini
-%  * ----------------------------------------------------------------------------
-% 
-
 
 \documentclass[a4paper]{report}
 \usepackage[utf8x]{inputenc}
@@ -39,19 +30,35 @@
 
 \selectlanguage{italian}
 \newpage
+%
+\null
+\vfill
+\begin{verbatim}
+	* ---------------------------------------------
+	* "THE BEER-WARE LICENSE" (Revision 42):
+	* <alexpacini90@gmail.com> wrote this file. 
+	* As long as you retain this notice you
+	* can do whatever you want with this stuff. 
+	* If we meet some day, and you think
+	* this stuff is worth it, 
+	* you can buy me a beer in return.
+	* Alex Pacini
+	* ---------------------------------------------
+\end{verbatim}
+
+\newpage
 \tableofcontents
 \newpage
 
-\section{Equazione della Diffusione (Paraboliche)}	\label{sec:diffusion}
+\chapter{Equazione della Diffusione (Paraboliche)}	\label{chap:diffusion}
 \input{diffusion}
 
-\section{Equazione di Laplace (Ellittiche)}	\label{sec:laplacian}
+\chapter{Equazione di Laplace (Ellittiche)}	\label{chap:laplacian}
 \input{laplacian}
 
-\section{Equazione delle Onde (Iperboliche)}	\label{sec:waves}
+\chapter{Equazione delle Onde (Iperboliche)}	\label{chap:waves}
 \input{waves}
 
-\addcontentsline{toc}{section}{Elenco delle figure}
 \listoffigures
 
 
