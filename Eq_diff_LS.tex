@@ -1,65 +1,56 @@
-% Template & Design by Alex Pacini
 % Alex Pacini
 % email: alexpacini90@gmail.com
 % skype: alex_pacini
 % blog: http://pacinispace.blogspot.com
 %%
 %%
-
 \documentclass[a4paper]{report}
-\usepackage[utf8x]{inputenc}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{mathrsfs}
-\usepackage{amsthm}
-\usepackage[pdftex]{graphicx}
 \usepackage[italian,english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage[utf8x]{inputenc}
+\usepackage{amssymb, amsmath}
 \usepackage{float}
 \usepackage{microtype}
 \usepackage{url}
 % If the package has not been installed into the LaTeX system files,
 % manually specify the path to it like:
 % \usepackage{./xx/xx/package}
-
+%
 \pagestyle{headings}
 \graphicspath{{images/}}
-
+%
 \begin{document}
-%Frontespizio
-\include{./frontespizio/frontespizio}
-
 \selectlanguage{italian}
-\newpage
+%
+\include{./frontespizio/frontespizio}
 %
 \null
 \vfill
-\begin{verbatim}
-	* ---------------------------------------------
-	* "THE BEER-WARE LICENSE" (Revision 42):
-	* <alexpacini90@gmail.com> wrote this file. 
-	* As long as you retain this notice you
-	* can do whatever you want with this stuff. 
-	* If we meet some day, and you think
-	* this stuff is worth it, 
-	* you can buy me a beer in return.
-	* Alex Pacini
-	* ---------------------------------------------
-\end{verbatim}
-
+%
+\selectlanguage{english}
+	``THE BEER-WARE LICENSE'' (Revision 42): \\
+	$<$alexpacini90@gmail.com$>$ wrote this file. 
+	As long as you retain this notice you
+	can do whatever you want with this stuff. 
+	If we meet some day, and you think
+	this stuff is worth it, you can buy me a beer in return.\\
+	Alex Pacini
+%
+\selectlanguage{italian}
 \newpage
 \tableofcontents
 \newpage
-
+%
 \chapter{Equazione della Diffusione (Paraboliche)}	\label{chap:diffusion}
 \input{diffusion}
-
-\chapter{Equazione di Laplace (Ellittiche)}	\label{chap:laplacian}
+%
+\chapter{Equazione di Laplace (Ellittiche)}		\label{chap:laplacian}
 \input{laplacian}
-
-\chapter{Equazione delle Onde (Iperboliche)}	\label{chap:waves}
+%
+\chapter{Equazione delle Onde (Iperboliche)}		\label{chap:waves}
 \input{waves}
-
+%
+\addcontentsline{toc}{chapter}{Elenco delle figure}
 \listoffigures
-
-
+%
 \end{document}
