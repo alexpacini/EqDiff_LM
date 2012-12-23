@@ -1,0 +1,77 @@
+\section{Derivazione dell'equazione del calore}
+Definiamo innanzitutto le variabili in gioco:\\
+$t=$ tempo, $x=$ posizione, $u(t,x)=$ temperatura nella posizione $x$ e al tempo $t$.\\
+Nel definire il modello si far\`a uso di:
+%
+\begin{align*}
+& r= \mbox{ tasso di calore per unit\`a di massa dall'esterno } \; [r]=\frac{[cal]}{[tempo][massa]}\\
+& \rho= \mbox{ densit\`a (lineare) di massa della barra } \; [\rho]=\frac{[massa]}{[lunghezza]}\\
+& q= \mbox{ flusso di calore } \; [q]=\frac{[cal]}{[tempo]}\\
+& e= \mbox{ energia interna per unit\`a di massa } \; [r]=\frac{[cal]}{[massa]}\\
+\end{align*}
+
+Il primo passo nella derivazione dell'equazione del calore consiste nell'applicare la \textit{Legge di Bilancio}:\\
+isolata una porzione $[x_0, x_0+h]$ della barra, il tasso di variazione dell'energia interna eguaglia il flusso agli estremi;
+nel caso di sorgente, il tasso di variazione del calore erogato sar\`a sommato al flusso agli estremi.
+\[
+	\underbrace{\frac{d}{dt}\int_{x_0}^{x_0+h} e(t,x)\rho dx}_\text{Variazione dell'energia rispetto al tempo}
+	= \overbrace{q(t,x_0)-q(t,x_0 +h)}^\text{Flusso entrante}
+	+\underbrace{\int_{x_0}^{x_0+h} r(t,x) \rho dx}_\text{Flusso della sorgente}
+\]
+Per il Teorema Fondamentale del Calcolo Integrale
+\[
+	q(t,x_0)-q(t,x_0 +h) = -\int_{x_0}^{x_0+h} q_x(t,x)dx
+\]
+dove $q_x$ indica $\frac{dq}{dx}$.
+
+Considerando che l'espressione 
+\[
+	\frac{d}{dt}\int_{x_0}^{x_0+h} e(t,x)\rho dx
+	= -\int_{x_0}^{x_0+h} q_x(t,x)dx
+	+\int_{x_0}^{x_0+h} r(t,x) \rho dx
+\]
+deve essere valida per $x_0$ e $x_0+h$ e che, data la continuit\`a dell'energia \`e possibile portare 
+la derivata all'interno del segno di integrale, si ottiene la Legge di Bilancio in forma locale
+\[
+	\frac{\partial}{\partial t} e(t,x)\rho= -\frac{\partial}{\partial x}q(t,x)+\rho r(t,x)
+\]
+
+\`E ora necessario applicare le leggi costitutive, che risultano essere delle leggi sperimentali.\\
+La prima, che prende il nome di \textit{Legge di Fourier}, indica che il flusso di calore ($q$) \`e direttamente proporzionale
+alla derivata spaziale della temperatura secondo la legge
+\[
+	q= -ku_x
+\]
+con $u=u(t,x)$ e $k>0$. Il segno negativo indica che si ha il flusso positivo passando dalla zona pi\`u calda a quella pi\`u fredda.
+\[
+	[k]= \frac{[cal]}{[tempo]}\frac{[lunghezza]}{[grado]}
+\]
+La seconda lega invece l'energia alla temperatura
+\[
+	e= c_lu
+\]
+dove $c_l$ indica il calore specifico ed \`e $>0$
+\[
+	[c_l]=\frac{[cal]}{[massa][grado]}
+\]
+Operando la sostituzione si ottiene
+\[
+	\rho c_l \frac{\partial}{\partial t} u= k \frac{\partial^2}{\partial x^2}u + \rho r
+\]
+che riordinata
+\[
+	u_t= \underbracket{D}_{\mathclap{\text{Risposta termica}}} u_{xx}+f
+\]
+dove $D=k/c_l\rho$ e $f=r/c_l$.
+\[
+	[D]=\frac{\cancel{[cal]}[lunghezza]}{[tempo]\cancel{[grado]}}\frac{\cancel{[massa]}\cancel{[grado]}}{\cancel{[cal]}}
+	\frac{[lunghezza]}{\cancel{[massa]}}=\frac{[lunghezza]^2}{[tempo]}
+\]
+
+L'equazione caratteristica risulta quindi essere, considerata l'equazione differenziale omogenea e sostituendo due variabili algebriche alle due variabili derivate
+\[
+	u_t= Du_{xx} \;\;\; \Rightarrow \;\;\; T=DX^2
+\]
+Si noti che \`e l'equazione di una parabola.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problemi ``Ben Posti''}
