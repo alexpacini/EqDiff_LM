@@ -73,5 +73,107 @@ L'equazione caratteristica risulta quindi essere, considerata l'equazione differ
 	u_t= Du_{xx} \;\;\; \Rightarrow \;\;\; T=DX^2
 \]
 Si noti che \`e l'equazione di una parabola.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Problemi ``Ben Posti''}
+Si considerino i cosiddetti ``problemi ben posti'', essi saranno del tipo
+\[
+	\left\{
+	\begin{array}{ll}
+		u_t=Du_{xx} & x\in\mathbb{R}, \; 0<t<T \\
+		u(0,x)=g(x) & \text{Temperatura Iniziale}\\
+		u(t,0)=\alpha(t) \; , \; u(t,L)=\beta(t) & \text{Condizioni di Dirichlet agli estremi}\\
+		u_x(t,0)=\alpha(t) \; , \; u_x(t,L)=\beta(t) & \text{Condizioni di Neumann agli estremi}
+	\end{array}
+	\right.
+\]
+Le condizioni di Dirichlet corrispondono a fissare la temperatura sui capi della sbarra, mentre con Neumann si fissa
+il flusso (condizioni di Neumann nulle significano che la barra \`e isolata agli estremi). Non sono state poste condizioni per $t=T$
+per la causalit\`a del sistema in esame.
+
+\section{Unicit\`a e dipendenza continua dai dati}
+Si inizia con il considerare la temperatura sulla barra
+\[
+	E(t)= \frac{1}{2}\int_0^L u^2 (t,x) dx
+\]
+e la si deriva rispetto al tempo
+\[
+	E'(t)= \frac{1}{2}\int_0^L 2u(t,x)u_t(t,x)dx
+\]
+Nel passaggio precedente ci si \`e posti nella condizione in cui la derivata della somma equivale alla somma delle derivate.\\
+Considerando ora $u_t=Du_{xx}$ si ottiene
+\[
+	E'(t)= D\int_0^L u(t,x)u_{xx}(t,x)dx
+\]
+Ora, utilizzando l'integrazione per parti
+\[
+	D\left[u(t,x)u_x(t,x)\right]_0^L - D\int_0^L 
+	\underbrace{u_x(t,x)u_x(t,x)}_{u_x^2(t,x)}dx
+\]
+Nel caso di condizioni agli estremi nulle si ha $u(t,0)=u(t,L)=0$, perci\`o il termine $D\left[u(t,x)u_x(t,x)\right]_0^L=0$ e quindi
+\[
+	E'(t)= - D \int_0^L u_x^2(t,x) dx \leq 0
+\]
+La derivata negativa indica che $E(t)\leq E(0)$, segue che
+\[
+	\int_0^L u^2(t,x)dx \leq \int_0^L g^2 (x) dx
+\]
+Perci\`o, considerato il sistema privo di ingressi e quindi l'equazione
+omogenea, l'energia non aumenta.\\
+Si consideri nuovamente l'equazione $u_t=Du_{xx}$; essa \`e lineare, perci\`o
+se $u_1$ e $u_2$ sono soluzioni e $C_1,\; C_2$ costanti, anche $u=C_1u_1+C_2u_2$ \`e soluzione.\\
+Se
+\[
+	\underbracket{
+		\begin{array}{l}
+			u_1 \text{ \`e soluzione con temperatura iniziale } g_1 \\
+			u_2 \text{ \`e soluzione con temperatura iniziale } g_2
+		\end{array}
+		}_{\Downarrow}
+\]
+\[
+	u_1-u_2 \text{ \`e soluzione con temperatura iniziale } g_1-g_2
+\]
+che applicato alla disuguaglianza precedente
+\[
+	\int_0^L \left(u_1(t,x)-u_2(t,x)\right)^2 dx
+	\leq
+	\int_0^L \left(g_1(x)-g_2(x)\right)^2 dx
+\]
+che garantisce:\\
+{\bf Unicit\`a}: Se $g_1=g_2$ si ottiene
+\[
+	\int_0^L \underbrace{\left(u_1(t,x)-u_2(t,x)\right)^2}_\text{sempre positivo o nullo} dx
+	\leq 0
+\]
+essendo la somma di quadrati sempre positiva
+\[
+	\int_0^L \left(u_1(t,x)-u_2(t,x)\right)^2 dx
+	= 0
+\]
+e quindi $u_1(t,x)=u_2(t,x)$
+Perci\`o con le stesse condizioni iniziali si ottiene la stessa soluzione.\\
+{\bf Dipendenza continua della soluzione dai dati}:\\
+Una differenza infinitesima nelle condizioni iniziali comporta una differenza
+infinitesima nella soluzione, garantendo la continuit\`a dai dati (non diverge).
+
+\section{Problema di Cauchy globale}
+Riprendendo il problema di Dirichlet con condizioni nulle agli estremi
+\[
+	\left\{
+	\begin{array}{l}
+		u_t=Du_{xx} \\
+		u(0,x)=g(x) \\
+		u(t,0)=0, \; u(t,L)=0
+	\end{array}
+	\right.
+\]
+Svincoliamo ora la soluzione da $g(x)$ (sar\`a ripreso successivamente)
+\[
+	\left\{
+	\begin{array}{l}
+		u_t=Du_{xx} \\
+		u(t,0)=0, \; u(t,L)=0
+	\end{array}
+	\right.
+\]
