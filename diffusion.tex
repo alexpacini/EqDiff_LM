@@ -134,7 +134,7 @@ Se
 \[
 	u_1-u_2 \text{ \`e soluzione con temperatura iniziale } g_1-g_2
 \]
-che applicato alla disuguaglianza precedente
+e applicato alla disuguaglianza precedente
 \[
 	\int_0^L \left(u_1(t,x)-u_2(t,x)\right)^2 dx
 	\leq
@@ -187,7 +187,7 @@ Si consideri $u(t,x)=v(t)w(x)$, perci\`o
 	\end{array}
 	\right.
 \]
-Dividendo per $v(t)w(x)$ si ottiene
+dividendo per $v(t)w(x)$ si ottiene
 \[
 	\left\{
 	\begin{array}{l}
@@ -195,4 +195,121 @@ Dividendo per $v(t)w(x)$ si ottiene
 		w(0)=w(L)=0
 	\end{array}
 	\right.
+\]
+Essendo le variabili di integrazione diverse, equivale a dire
+\[
+	\frac{v'(t)}{v(t)}=K=D\frac{w''(x)}{w(x)}
+\]
+con $K$ una costante. Perci\`o si posso spezzare in due equazioni
+\[
+	\left\{
+	\begin{array}{l}
+		\displaystyle{D w''(x) - Kw(x) = 0 }\\
+		w(0)=w(L)=0
+	\end{array}
+	\right.
+	\;\;\;
+	\text{ e }
+	\;\;\;
+	v'(t)=Kv(t)
+\]
+Procediamo con il risolvere l'equazione differenziale di secondo grado; 
+infatti essa imporr\`a dei vincoli su $K$.
+\[
+	D\lambda^2-K=0
+\]
+\[
+	\lambda^2=\frac{K}{D}
+\]
+Si distinguono ora i vari casi:
+\begin{itemize}
+	\item $K>0$
+	\item $K=0$
+	\item $K<0$
+\end{itemize}
+
+{\bf Se $K>0$}:
+\[
+	\lambda=\pm \sqrt{\frac{K}{D}}
+\]
+\[
+	w(x)= C_1e^{x\sqrt{\frac{K}{D}}} + C_2e^{-x\sqrt{\frac{K}{D}}}
+\]
+applicando le condizioni al contorno ($w(0)=0 \; w(L)=0$)
+\[
+	\left\{
+	\begin{array}{l}
+		C_1+C_2=0 \\
+		\displaystyle{C_1e^{L\sqrt{\frac{K}{D}}} 
+			+ C_2e^{-L\sqrt{\frac{K}{D}}}}
+	\end{array}
+	\right.
+	\;\;\;
+	\Rightarrow
+	\;\;\;
+	\left\{
+	\begin{array}{l}
+		C_1=0\\
+		C_2=0
+	\end{array}
+	\right.
+\]
+Perci\`o l'insieme delle soluzioni con $K>0$ verr\`a scartato.
+
+{\bf Se $K=0$}:
+\[
+	w''=0
+	\;\;\;
+	\Rightarrow
+	\;\;\;
+	w(x)=C_1x + C_2
+\]
+\[
+	\left\{
+	\begin{array}{l}
+		w(x)=C_1x + C_2\\
+		w(0)=0, \; w(L)=0
+	\end{array}
+	\right.
+	\;\;\;
+	\Rightarrow
+	\;\;\;
+	\left\{
+	\begin{array}{l}
+		C_1=0\\
+		C_2=0
+	\end{array}
+	\right.
+\]
+Anche la soluzione con $K=0$ sar\`a scartata.
+
+{\bf Se $K<0$}:\\
+Poniamo $-\omega^2 = K/D$ $\Rightarrow$ $\lambda^2 = - \omega^2$ e $\lambda=\pm i\omega$
+\[
+	\left\{
+	\begin{array}{l}
+		w(x)=C_1 cos(\omega x) + C_2 sin(\omega x)\\
+		w(0)=0, \; w(L)=0
+	\end{array}
+	\right.
+	\;\;\;
+	\Rightarrow
+	\;\;\;
+	\left\{
+	\begin{array}{l}
+		C_1=0\\
+		C_2 sin(\omega L)= 0
+	\end{array}
+	\right.
+\]
+\[
+	\sin (\omega L)=0
+	\;\;\;
+	\Rightarrow
+	\;\;\;
+	\omega L = n\pi
+	\;\;\;
+	\Rightarrow
+	\;\;\;
+	\omega_n= \omega= n \frac{\pi}{L} \text{, con }n=1,2,3,\ldots
 \]
