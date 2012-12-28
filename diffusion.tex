@@ -313,3 +313,196 @@ Poniamo $-\omega^2 = K/D$ $\Rightarrow$ $\lambda^2 = - \omega^2$ e $\lambda=\pm 
 	\;\;\;
 	\omega_n= \omega= n \frac{\pi}{L} \text{, con }n=1,2,3,\ldots
 \]
+Ora, considerata la soluzione n-esima di $w(x)$
+\[
+	w_n(x)=sin\left(\frac{n\pi}{L}x \right)
+\]
+dove la costante $C_2$ sar\`a considerata successivamente, al momento della scomposizione con Fourier.\\
+Considerato ora
+\[
+	K_n=-\omega_n^2 D= -\left(\frac{n\pi}{L}\right)^2D
+\]
+procediamo con il risolvere l'equazione differenziale di primo grado
+\[
+	v'(t)= Kv(t)
+\]
+\[
+	v_n(t)= e^{Kt}=e^{-\left(\frac{n\pi}{L}\right)^2Dt}
+\]
+Riprendendo  $u_n(t,x)= w_n(x) v_n(t)$ si ottengono le infinite soluzioni
+di base del problema di Dirichlet iniziale
+\[
+	u_n(t,x)= e^{-\frac{n^2\pi^2}{L^2} Dt}
+	sin\left(\frac{n\pi}{L}x \right)
+\]
+A questo punto Fourier considera la possibilit\`a di scomporre qualsiasi
+soluzione come serie di sinusoidi, quindi
+\[
+	u= \sum_{n=1}^{\infty} b_n u_n(t,n)=
+	\sum_{n=1}^{\infty}b_n e^{-\frac{n^2\pi^2}{L^2} Dt}
+	sin\left(\frac{n\pi}{L}x \right)
+\]
+dove i vari $b_n$ rappresenterebbero i precedenti $C_{2(n)}$.\\
+A questo punto \`e possibile definire anche le condizioni con $t=0$ attraverso
+la scomposizione in \texttt{serie di Fourier}, infatti $u(0,x)=g(x)$, perci\`o
+\[
+	g(x)= \sum_{n=1}^{\infty} b_n sin\left(\frac{n\pi}{L}x \right)
+\]
+con $0\leq x \leq L$.\\
+Bisogna quindi trovare un modo per poter esprimere la funzione $g(x)$
+come serie di sinusoidi.\\
+Verifichiamo prima di tutto la convergenza.\\
+Si prenda una sequenza limitata dei coefficienti $b_n$, cio\`e che
+$|b_n|\leq C$ per qualsiasi $n$, data $C$ una costante. Allora se $t \geq t_0 > 0$
+e $0\leq x \leq L$
+\[
+	\sum_{n=1}^{\infty}\left| b_n e^{-\frac{n^2\pi^2}{L^2} Dt}
+	sin\left(\frac{n\pi}{L}x \right)\right|
+	\leq
+	\sum_{n=1}^{\infty}\left| b_n \right| e^{-\frac{n^2\pi^2}{L^2} Dt}
+	\leq
+	C \underbrace{\sum_{n=1}^{\infty}e^{-\frac{n^2\pi^2}{L^2} Dt}}
+	_\text{Serie convergente}
+\]
+Siccome ogni addendo \`e soluzione dell'equazione, se risulta possibile
+derivare all'interno della serie, anch'essa \`e soluzione. Questo pu\`o essere
+effettuato nel caso in cui la somma della serie converga.
+\[
+	\sum_{n=1}^{\infty}\left| \frac{\partial}{\partial x} u_n \right|=
+	\sum_{n=1}^{\infty}\left| b_n \frac{n\pi}{L} 
+	e^{-\frac{n^2\pi^2}{L^2} Dt}
+	sin\left(\frac{n\pi}{L}x \right)\right|
+	\leq
+	C \sum_{n=1}^{\infty} \frac{n\pi}{L} e^{-\frac{n^2\pi^2}{L^2} Dt}
+\]
+In questo caso $e^{-n^2}$ tende a zero molto rapidamente, rendendo la serie convergente. Successivamente anche la derivata seconda converge 
+(in realt\`a \`e una funzione liscia, cio\`e $u(t,x)\in C^\infty$,
+per $t>0$ e $0\leq x \leq L$).
+Qualunque sia $g(x)$, passato l'istante $t=0$, la funzione diventa immediatamente
+continua. La diffusione ha quindi un effetto regolarizzante.\\
+\`E quindi possibile derivare all'interno della sommatoria.\\
+Si tratta ora di costruire il prolungamento dispari con periodo $2L$ (fig. \ref{prolper_disp})
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{gx.pdf}
+	\caption{Funzione $g(x)$}
+	\label{gx}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{prolper_disp.pdf}
+	\caption{Prolungamento periodico dispari}
+	\label{prolper_disp}
+\end{figure}
+\noindent
+Si \`e operato con un prolungamento dispari in modo da ottenere una serie composta
+da sole sinusoidi. Si noti che nella parte di interesse, cio\`e tra $0$ e $L$, 
+rappresenta effettivamente la funzione $g(x)$.
+\[
+	b_n= \frac{2}{L}\int_0^L g(x)sin \left(\frac{n\pi}{l} x\right) dx
+	\;\;\; \text{con} \;\;\;
+	\omega= \frac{2\pi}{2L}= \frac{\pi}{L}
+\]
+Ricavati i $b_n$ \`e possibile ottenere la funzione $u(x,t)$.
+
+Il coefficiente di scala \`e dato da $D/L^2$; questo consente di 
+scalare le dimensioni variando opportunamente il materiale, rendendo possibile
+l'uso di modellini equivalenti (scalati).
+\[
+	\frac{D_1}{L_1^2}= \frac{D_2}{L_2^2}
+\]
+\subsection{Esercizio: Condizioni agli estremi non nulle}
+\[
+	\left\{
+	\begin{array}{l}
+		u_t=Du_{xx} \\
+		u(0,x)=g(x) \\
+		u(t,0)=\theta_1 \\
+		u(t,L)=\theta_2
+	\end{array}
+	\right.
+\]
+con $\theta_1 \neq \theta_2$.\\
+Si inizia con il considerare una soluzione stazionaria del problema, cio\`e
+indipendente dal tempo
+\[
+	\left\{
+	\begin{array}{l}
+		\cancel{u_t}=Du_{xx}^S \\
+		u(0,x)=g(x) \\
+		u^S(\cancel{t},0)=\theta_1 \\
+		u^S(\cancel{t},L)=\theta_2
+	\end{array}
+	\right.
+	\;\;\;
+	\Rightarrow
+	\;\;\;
+	\left\{
+	\begin{array}{l}
+		Du_{xx}^S= 0 \\
+		u(0,x)=g(x) \\
+		u^S(0)=\theta_1 \\
+		u^S(L)=\theta_2
+	\end{array}
+	\right.
+\]
+\[
+	(u^S)''(x)=0 \;\;\; \Rightarrow \;\;\; u^S(x)=ax+b
+\]
+\[
+	u^S(0)= \theta_1 \;\;\; \Rightarrow \;\;\; b= \theta_1
+\]
+\[
+	u^S(L)= \theta_2 \;\;\; \Rightarrow \;\;\; aL+\theta_1= \theta_2
+	\;\;\; \Rightarrow \; \; \; a= \frac{\theta_2 - \theta_1}{L}
+\]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{nonomog_stationary.pdf}
+	\caption{Soluzione stazionaria}
+	\label{nonomog_stationary}
+\end{figure}
+La soluzione \`e composta quindi dalla soluzione stazionaria e dalla soluzione
+con condizioni agli estremi nulle.
+\[
+	u(t,x)= \underbrace{v(t,x)}_{\mathclap{\text{Transitorio}}} + u^S(x)
+\]
+con $u(0,x)= v(0,x) + u^S(x) \;\;\; \Rightarrow \;\;\; v(0,x)=g(x)- u^S(x)$
+\[
+	\left\{
+	\begin{array}{l}
+		v_t=Dv_{xx} \\
+		v(0,x)=g(x)- u^S(x) \\
+		v(t,0)=0 \\
+		v(t,L)=0
+	\end{array}
+	\right.
+\] 
+\subsection{Esercizio: Barra isolata agli estremi}
+\[
+	\left\{
+	\begin{array}{l}
+		u_t=Du_{xx} \\
+		u(0,x)=g(x) \\
+		u_x(t,0)=0 \\
+		u_x(t,L)=0
+	\end{array}
+	\right.
+\]
+Si ottiene che la soluzione \`e composta da una serie di soli coseni a 
+valor medio non nullo
+\[
+	u(t,x)= \frac{a_0}{2}+ \sum_{n=1}^\infty a_n 
+	e^{-\frac{n^2\pi^2}{L^2} Dt}
+	cos \left(\frac{n\pi}{L}x \right)
+\]
+\[
+	\frac{a_0}{2}= \frac{1}{L}\int_0^L g(x)dx
+\]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{isol_bar.pdf}
+	\caption{Valor medio di $g(x)$ con barra isolata}
+	\label{isol_bar}
+\end{figure}
+
