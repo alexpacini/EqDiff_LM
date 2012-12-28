@@ -385,13 +385,13 @@ Si tratta ora di costruire il prolungamento dispari con periodo $2L$ (fig. \ref{
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{gx.pdf}
-	\caption{Funzione $g(x)$}
+	\caption{Funzione $g(x)$.}
 	\label{gx}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{prolper_disp.pdf}
-	\caption{Prolungamento periodico dispari}
+	\caption{Prolungamento periodico dispari.}
 	\label{prolper_disp}
 \end{figure}
 \noindent
@@ -459,7 +459,7 @@ indipendente dal tempo
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{nonomog_stationary.pdf}
-	\caption{Soluzione stazionaria}
+	\caption{Soluzione stazionaria.}
 	\label{nonomog_stationary}
 \end{figure}
 La soluzione \`e composta quindi dalla soluzione stazionaria e dalla soluzione
@@ -502,7 +502,194 @@ valor medio non nullo
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{isol_bar.pdf}
-	\caption{Valor medio di $g(x)$ con barra isolata}
+	\caption{Valor medio di $g(x)$ con barra isolata.}
 	\label{isol_bar}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Barra con lunghezza infinita}
+\[
+	\left\{
+	\begin{array}{ll}
+		u_t=Du_{xx} \\
+		u(0,x)=g(x) & -\infty < x < \infty \\
+	\end{array}
+	\right.
+\]
+Il comportamento agli estremi ($-\infty < x < \infty$) \`e inglobato nella definizione dello spazio al quale deve appartenere la soluzione.
+\subsection{Soluzione fondamentale}
+La soluzione fondamentale descrive la diffusione per $t>0$ di una massa unitaria concentrata in $x=0$ al tempo $t=0$. Questo significa
+\[
+	\left\{
+	\begin{array}{l}
+		u_t=Du_{xx}, \;\;\; t>0 \\
+		u(0,x)= \delta(x)  \\
+	\end{array}
+	\right.
+\]
+si utilizza la trasformata di Fourier rispetto ad $x$ di $u(x,t)$ definita da 
+\[
+	v(t,\lambda)=\int_{-\infty}^{+\infty} e^{-i\lambda x} u(t,x) dx
+\]
+nel caso che $u(t,x)$ sia sommabile da $- \infty$ a $+ \infty$ in $dx$ per $t>0$. Ricordiamo che la trasformata si estende a distribuzioni di Schwartz
+di cui anche $\delta (x)$ fa parte, con trasformata pari a $1$.
+Allora \`e equivalente a
+\[
+	\left\{
+	\begin{array}{l}
+		v_t=D\left( i\lambda \right)^2 v \;\; = -D\lambda^2 v\\
+		v(0,\lambda)= 1  \\
+	\end{array}
+	\right.
+\]
+con $\hat{\delta}= 1$ e $\partial_x \Leftrightarrow i\lambda$.\\
+L'integrale generale dell'equazione vale
+\[
+	v(t,\lambda)= C(\lambda)e^{-D\lambda^2 t}
+\]
+che fissate le condizioni agli estremi
+\[
+	v(0,t)= 1 \;\;\; \Rightarrow \;\;\; c(\lambda)= 1
+\]
+\[
+	\Downarrow
+\]
+\[
+	v(t,\lambda)= e^{-D\lambda^2 t}
+\]
+Si tratta di una trasformata notevole
+\[
+	u(t,x)= \frac{1}{\sqrt{4 \pi D t}}
+	e^{-\frac{x^2}{4Dt}}
+\]
+Questa \`e l'unica soluzione di 
+\[
+	\left\{
+	\begin{array}{l}
+		u_t=Du_{xx}, \;\;\; t>0 \\
+		u(0,x)= \delta(x)  \\
+	\end{array}
+	\right.
+\]
+tale che $u(t, \bullet) \in \mathcal{S'}, \;\; t \geq 0$.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{gauss_bell.pdf}
+	\caption{$u(t,x)$ con $t_1$ fissato e $t>0$; preso $t_2>t_1$ la campana si abbassa e si allarga, mantenendo la stessa area.}
+	\label{gauss_bell}
+\end{figure}
+Il fatto che,
+\[
+	\intR u(t,x) dx = 
+	\frac{1}{\sqrt{4 \pi D t}}
+	\intR e^{-\frac{x^2}{4Dt}} dx
+\]
+operando le sostituzioni,
+\[
+\frac{x}{\sqrt{4Dt}}= y \;\;\; \text{e} \;\;\; \frac{dx}{\sqrt{4Dt}}= dy
+\]
+\[
+	\frac{1}{\sqrt{\pi}}\intR e^{-y^2} dy= \frac{1}{\sqrt{\pi}}\sqrt{\pi}=1
+\]
+esprime la conservazione della massa totale ad ogni tempo $t>0$.
+La massa unitaria inizialmente centrata nel punto $x=0$ si diffonde con densit\`a gaussiana di scarto quadratico $4Dt$ al tempo $t$ (fig. \ref{gauss_bell}).
+\subsection{Trasformazioni invarianti}
+\subsubsection{Traslazione temporale}
+Consideriamo una soluzione $u(t,x)$ di 
+\[
+	u_t= Du_{xx} \;\;\; 0< t< T, \;\;\; - \infty <x < +\infty
+\]
+La funzione
+\[
+	v(t,x)= u(T-t,x)
+\]
+\`e tale che 
+\[
+	v_t(t,x)= -u_t(T-t, x)
+\]
+\[
+	v_{xx}(t, x)= u_{xx}(T-t,x)
+\]
+quindi risolve l'equazione
+\[
+	v_t= -Dv_{xx}
+\]
+La non invarianza dell'equazione rispetto alla trasformazione $t \Rightarrow T-t$
+riflette la non reversibilit\`a temporale dei fenomeni di diffusione.
+Il problema di Cauchy globale \`e ben posto con condizione iniziale al tempo 
+$t=0$ e nessuna condizione pu\`o essere posta al tempo finale $t=T$, in quanto il comportamento nel futuro \`e completamente determinato dalla storia passata
+(principio di causalit\`a).
+Il problema 
+\[
+	v_t= -Dv_{xx}
+\]
+\`e ben posto con la condizione al tempo $t=T$ e nessuna condizione pu\`o essere posta al tempo $t=0$
+\subsubsection{Invarianti di scala}
+La trasformazione
+\[
+	t\Rightarrow at, \;\;\; x \Rightarrow bx, \;\;\; u\Rightarrow cu,
+	\;\;\;
+	\text{ con }
+	a,b,c>0
+\]
+\`e un cambio di scala (omotetia) per il grafico di $u$.
+
+Vediamo sotto quali condizioni la funzione
+\[
+	v(t,x)= cu(at, bx)
+\]
+\`e ancora soluzione.
+\[
+	\begin{array}{l}
+		v_t= acu_t \\
+		v_{xx}= b^2 c u_{xx}  \\
+		v_t= Dv_{xx} \\
+		\left( u_t= Du_{xx} \right)
+	\end{array}
+\]
+\[
+	\Downarrow
+\]
+\[
+	acu_t= Db^2 c u_{xx} \follows a=b^2
+\]
+Per ottenere il coefficiente $c$, prendiamo il esame la conservazione della 
+massa
+\[
+	\intR v(t,x) dx = \intR u(t,x) dx = m= 1
+\]
+perci\`o
+\[
+	\intR v(t,x) dx=
+	\intR cu(at, \sqrt{a}x) dx= \frac{c}{\sqrt{a}}
+	\intR u(at,y)
+\]
+sostituendo
+\[
+	y=\sqrt{a}x, \;\;\; dx= \frac{1}{\sqrt{a}}dy
+\]
+si ottiene
+\[
+	\frac{c}{\sqrt{a}}
+	\intR u(at,y)dy= \frac{c}{\sqrt{a}}
+	\follows
+	\frac{c}{\sqrt{a}=1}
+	\follows
+	c=\sqrt{a}
+\]
+In conclusione
+\[
+	v(t,x)= \sqrt{a}u(at, \sqrt{a}x)
+\]
+\`e ancora una soluzione con la stesa massa totale conservata ad ogni $t>0$.
+
+Le trasformazioni del tipo
+\[
+	t\Rightarrow at, \;\;\; x=\sqrt{a} x
+\]
+si chiamano dilatazioni paraboliche, in quanto lasciano invariati i rapporti
+\[
+	\frac{x^2}{t}, \;\;\; \frac{x}{\sqrt{t}}
+\]
+\section{Soluzione fondamentale senza l'uso della trasformata di Fourier}
+Prendo
 
