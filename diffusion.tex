@@ -119,7 +119,7 @@ La derivata negativa indica che $E(t)\leq E(0)$, segue che
 	\int_0^L u^2(t,x)dx \leq \int_0^L g^2 (x) dx
 \]
 Perci\`o, considerato il sistema privo di ingressi e quindi l'equazione
-omogenea, l'energia non aumenta.\\
+omogenea, $E(t)$ non aumenta. \\
 Si consideri nuovamente l'equazione $u_t=Du_{xx}$; essa \`e lineare, perci\`o
 se $u_1$ e $u_2$ sono soluzioni e $C_1,\; C_2$ costanti, anche $u=C_1u_1+C_2u_2$ \`e soluzione.\\
 Se
@@ -344,7 +344,7 @@ soluzione come serie di sinusoidi, quindi
 \]
 dove i vari $b_n$ rappresenterebbero i precedenti $C_{2(n)}$.\\
 A questo punto \`e possibile definire anche le condizioni con $t=0$ attraverso
-la scomposizione in \texttt{serie di Fourier}, infatti $u(0,x)=g(x)$, perci\`o
+la scomposizione in \textit{serie di Fourier}, infatti $u(0,x)=g(x)$, perci\`o
 \[
 	g(x)= \sum_{n=1}^{\infty} b_n sin\left(\frac{n\pi}{L}x \right)
 \]
@@ -574,7 +574,7 @@ tale che $u(t, \bullet) \in \mathcal{S'}, \;\; t \geq 0$.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{gauss_bell.pdf}
-	\caption{$u(t,x)$ con $t_1$ fissato e $t>0$; preso $t_2>t_1$ la campana si abbassa e si allarga, mantenendo la stessa area.}
+	\caption{$u(t,x)$ con $t_1$, $t_2$ fissati tali che $t_2>t_1>0$.}
 	\label{gauss_bell}
 \end{figure}
 Il fatto che,
@@ -691,5 +691,513 @@ si chiamano dilatazioni paraboliche, in quanto lasciano invariati i rapporti
 	\frac{x^2}{t}, \;\;\; \frac{x}{\sqrt{t}}
 \]
 \section{Soluzione fondamentale senza l'uso della trasformata di Fourier}
-Prendo
+Prendo formalmente $a= 1/t$ nelle dilatazioni paraboliche e cerchiamo una soluzione 
+\[
+	u^*(t,x)= \frac{1}{\sqrt{t}}u \left( 1, \frac{x}{\sqrt{t}} \right)=
+	\frac{1}{\sqrt{t}}U \left( r \right)
+\]
+a variabili separate, come prodotto della funzione dl solo tempo $\frac{1}{\sqrt{t}}$ e della funzione $U(r)$, da determinarsi, della sola variabile
+$r=\frac{x}{\sqrt{t}}$
+\[
+	u^*_t= -\frac{1}{2}t^{-\frac{3}{2}} U(r)
+	+ t^{-\frac{1}{2}}U'(r) x \left( -\frac{1}{2}t^{-\frac{3}{2}} \right)
+	= -\frac{1}{2}t^{-\frac{3}{2}} \left( U(r)+ rU'(r) \right)
+\]
+\[
+	u^*_x= t^{-\frac{1}{2}}U'(r)t^{-\frac{1}{2}}=
+	t^{-1} U'(r)
+\]
+\[
+	u^*_{xx}=t^{-1}U''(r)t^{\frac{1}{2}}=
+	t^{-\frac{3}{2}}U''(r)
+\]
+Considerando quindi
+\[
+	u^*_t=Du^x_{xx}
+\]
+ottengo
+\[
+	-\frac{1}{2} U(r) -\frac{1}{2}rU'(r)= DU''(r)
+\]
+\[
+	2DU''(r)+ rU'(r)+ U(r)= 0
+\]
+che risulta essere una equazione differenziale a coefficienti non costanti.
+I polinomi di grado finito non possono risolvere l'equazione, ma serve una serie.
+Cerchiamo le soluzioni come serie di potenze
+\[
+	U(r)= \sum_{n=0}^{\infty}a_n r^n
+\]
+\[
+	U'(r)= \sum_{n=1}^{\infty} n a_n r^{n-1}
+	= \sum_{n=0}^{\infty} n a_n r^{n-1}
+\]
+\[
+	rU'(r)= \sum_{n=0}^{\infty} na_n r^n
+\]
+\[
+	U''(r)=\sum_{n=2}^{\infty} n(n-1)a_n r^{n-2}
+\]
+sostituendo con la variabile d'appoggio $m=n-2$
+\[
+	U''(r)=\sum_{m=2}^{\infty} (m+2)(m+1)a_(m+2) r^{m}
+\]
+quindi richiamando l'indice $n$
+\[
+	U''(r)=\sum_{n=2}^{\infty} (n+2)(n+1)a_(n+2) r^{n}
+\]
+Sostituendo nell'equazione ed eguagliando a zero il coefficiente di $r^n$ per 
+ogni $k \geq $, si ha
+\[
+	2D(n+2)(n+1)a_{n+2}+ na_n+ a_n = 0
+\]
+\[
+	2D(n+2)\cancel{(n+1)}a_{n+2}+ \cancel{(n+1)}a_n=0
+\]
+con $n+1 \neq 0$, ma $n$ parte da zero, perci\`o \`e sempre positivo.\\
+La formula ricorsiva
+\[
+	a_{n+2}= -\frac{a_n}{2D(n+2)}
+\]
+fornisce tutti i coefficienti di indice pari, assegnato $a_0$, e tutti quelli
+dispari assegnato $a_1$.
+Del resto sappiamo che l'integrale generale dipende da due costanti arbitrarie.
+Se siamo alla ricerca di una soluzione che descriva la diffusione di una massa inizialmente concentrata in $x=0$, \`e naturale assumere la densit\`a abbia
+simmetria pari per $t>0$, perci\`o $a_1=0$ e quindi tutti gli $a$ con indice
+dispari sono nulli.
+Stabiliti $a_0$ e $a_1$ si \`e stabilita tutta la serie, con $n\rightarrow \infty$
+Per quanto riguarda i coefficienti pari
+\begin{align*}
+	& a_0=\ldots \\
+	& a_2= - \frac{1}{4D} a_0 \\
+	& a_4= - \frac{1}{4D \cdot 2} a_2 = \left( -\frac{1}{4D} \right)^2
+	\frac{1}{2} a_0 \\
+	& a_6= - \frac{1}{4D \cdot 3} a_4 = \left( -\frac{1}{4D} \right)^3
+	\frac{1}{3 \cdot 2} a_0 \\
+	& a_{2(m+1)}= \left( -\frac{1}{4D} \right)^{m+1}
+	\frac{1}{(m+1)!} a_0 \\
+	& \text{sostituendo }m \rightarrow m+1 \\
+	& a_{2m}= \left( -\frac{1}{4D} \right)^{m}
+	\frac{1}{m!} a_0 \\
+\end{align*}
+Questa comprende anche $a_0$, infatti $a_0= 1 \cdot 1/1 \cdot a_0= a_0$\\
+Riprendendo $U(r)$
+\[
+	U(r)= a_0 \sum_{m=0}^{\infty} \frac{1}{m!} 
+	\left( -\frac{1}{4D} \right)^m r^{2m}
+	= a_0 \sum_{m=0}^{\infty} \frac{1}{m!} 
+	\left( -\frac{r^2}{4D} \right)^m
+	= a_0 e^{- \left( r^2/4D \right)}
+\]
+dove si \`e usata la definizione attraverso la serie di potenze 
+dell'esponenziale
+\[
+	\sum_{m=0}^{\infty} \frac{x^m}{m!}= e^x
+\]
+Si sono quindi ottenute le soluzioni
+\[
+	u^*(t,x)= \frac{1}{\sqrt{t}}U(r)= \frac{a_0}{\sqrt{t}}
+	e^{- \left( r^2/4D \right)}
+	= \frac{a_0}{\sqrt{t}} e^{- \left( x^2/4Dt \right)}
+\]
+Imponendo che la massa conservata sia $m=1$, si ha
+\[
+	\intR u^*(t,x) dx= \frac{a_0}{\sqrt{t}}
+	\intR e^{-\left( x^2/4Dt \right)} dx
+\]
+ponendo $x= \sqrt{4Dt}y$ e $dx= \sqrt{4Dt} dy$
+\[
+	\intR e^{-y^2}dy= \sqrt{\pi}
+\]
+perci\`o
+\[
+	\frac{a_0}{\sqrt{t}}\sqrt{4Dt}\sqrt{\pi}=a_0\sqrt{4D\pi}=1
+\]
+\[
+	a_0= \frac{1}{\sqrt{4D\pi}}
+\]
+\[
+	u^*(t,x)= u(t,x)= \frac{1}{\sqrt{4D\pi t}}
+	e^{-\left( x^2/4Dt \right)}
+	= \Gamma_D(t,x)
+\]
+con $t>0$. L'effetto \`e quindi quello gi\`a indicato in fig. \ref{gauss_bell}.
+L'andamento di $\Gamma_D(t,x)$ per $t \rightarrow 0$ \`e uno dei fenomeni che
+ha portato alla definizione della \textit{Delta di Dirac}.
+Se lo scarto quadratico $4Dt \rightarrow 0$, la massa totale $m=1$ tende
+a concentrarsi nel valor medio $x=0$.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{gauss_bell_delta.pdf}
+	\caption{La massa resta costante al variare di $t$.}
+	\label{gauss_bell_delta}
+\end{figure}
+\noindent
+La funzione limite puntuale vale per\`o
+\[
+	\Gamma_D(t,x)
+	\;\;\;
+	\substack{\xrightarrow{\hspace*{5mm}} \\ t\rightarrow 0}
+	\;\;\;
+	\left\{
+		\begin{array}{cl}
+			0 		& x \neq 0 \\
+			+ \infty	& x= 0 \\
+		\end{array}
+	\right.
+\]
+che perde l'informazione essenziale
+\[
+	\intR \Gamma_D(t,x) dx= 1
+\]
+Infatti l'integrale della funzione nulla ovunque tranne che per $x=0$, dove vale $\infty$, si riduce all'area della semiretta $x=0$, $y\geq 0$, che vale
+0. Il limite puntuale non \`e dunque il modello matematico corretto.
+Se invece prendiamo delle funzioni test $\phi (x)$ che siano regolari
+($C^\infty$) e nulle fuori da un intervallo limitato, $\Gamma_D(t,x)$, 
+come ogni altra funzione localmente sommabile, \`e identificabile attraverso
+i campionamenti
+\[
+	\phi \;\;\; \longmapsto \;\;\;
+	\intR \Gamma_D(t,x) \phi(x) dx
+\]
+Si ha cos\`i un funzionale lineare
+\[
+	\phi \;\;\; \longmapsto \;\;\;
+	\left< \Gamma_D(t,x), \phi \right>
+\]
+dallo spazio delle funzioni di test a $\mathbb{C}$ (si vogliono considerare
+anche le funzioni a valori complessi: ad esempio la trasformata di Fourier di
+una funzione anche reale \`e in generale complessa).\\
+Mandando $t \to 0$, si ha
+\[
+	\left< \Gamma_D, \phi \right>=
+	\frac{1}{\sqrt{4 \pi D t}} \intR
+	e^{\left( -x^2/4Dt \right)}
+	\phi (x) dx
+\]
+con la sostituzione $x= y \sqrt{4Dt}$
+\[
+	\frac{1}{\sqrt{\pi}} \intR
+	e^{-y^2}\phi (y\sqrt{4Dt}) dy
+	\;\;\;
+	\substack{\xrightarrow{\hspace*{5mm}} \\ t\rightarrow 0}
+	\;\;\;
+	\phi(0)\frac{1}{\sqrt{\pi}}
+	\intR e^{-y^2}= \phi(0)
+\]
+Il modello matematico di una massa unitaria centrata in $x=0$ \`e dunque 
+il funzionale
+\[
+	\phi \longmapsto \phi(0)
+\]
+che si indica con $\delta$, dunque
+\[
+	\left< \delta, \phi \right> = \phi(0)
+\]
+ed \`e detta \textit{Delta di Dirac}.
+Non corrisponde ad una funzione, perch\'e non esiste alcuna funzione $u(x)$
+tale che
+\[
+	\intR u(x)\phi(x)dx= \phi (0)
+\]
+Per ogni funzione test $\phi$.
 
+Questi funzionali lineari, muniti di una opportuna nozione di continuit\`a
+rispetto a $\phi$, si chiamano distribuzioni. Le distribuzioni sono
+derivabili di ogni ordine definendo una opportuna nozione di derivata,
+detta anche derivata debole (o nel senso delle distribuzioni).
+Ripartendo dal funzionale di campionamento della funzione $u'(x)$, derivata
+localmente sommabile di una funzione continua $u(x)$, si ha
+\[
+	\intR u'(x)\phi(x) dx= \cancel{\left[ u(x)\phi(x) \right]^
+	{+\infty}_{-\infty}}- \intR u(x)\phi ' (x) dx
+\]
+Il termine $\left[ u(x)\phi(x) \right]^{+\infty}_{-\infty}$ \`e nullo perch\'e
+$\phi$ \`e una funzione test, nulla fuori di un intervallo limitato.\\
+Perci\`o
+\[
+	\left< u', \phi \right>= - \left< u, \phi ' \right>
+\]
+Se ora $u$ \`e una distribuzione qualunque, ci\`o porta a definire la
+distribuzione $u'$ proprio attraverso
+\[
+	\left< u', \phi \right>\substack{\text{DEF} \\ =} - \left< u, \phi ' \right>
+\]
+Secondo questa definizione, $\delta$ \`e la derivata del gradino unitario $H$
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{heaviside.pdf}
+	\caption{Gradino unitario.}
+	\label{heaviside}
+\end{figure}
+\noindent
+Infatti
+\[
+	\left< H', \phi \right>= - \left< H, \phi ' \right>
+	=- \int_0^{\infty} \phi'(x) dx
+	=- \left[ \phi (x) \right]^{+ \infty}_{0}
+	= \phi(0)= \left< \delta, \phi \right>
+\]
+cio\`e
+\[
+	H'=\delta
+\]
+nel senso delle distribuzioni.
+Si noti che la derivata di $H$ nel senso usuale \`e la funzione nulla definita
+per $x \neq 0$.
+\section{Considerazioni sulla soluzione fondamentale}
+Torniamo a considerare la soluzione fondamentale
+\[
+	\Gamma_D(t,x)= \frac{1}{\sqrt{4D\pi t}}
+	e^{-\left( x^2/4Dt \right)}
+\]
+che descrive l'evoluzione per $t>0$ della densit\`a lineare di una massa totale
+$m=1$ inizialmente concentrata in $x=0$ al tempo $t=0$. 
+Se la massa \`e realizzata attraverso un grande numero $N$ di particelle poste in $x=0$ per $t=0$, l'integrale di densit\`a normale (gaussiana)
+\[
+	\frac{1}{\sqrt{4 \pi D t}}\int_a^b 
+	e^{-\left( x^2/4Dt \right)} dx
+\]
+descrive la probabilit\`a che una di queste particelle si trovi al tempo $t$
+nell'intervallo $[a,b]$, quindi la percentuale di particelle presenti in $[a,b]$
+al tempo $t$.
+
+Il dato iniziale 
+\[
+	\Gamma_D(0,x)= \delta
+\]
+\`e altamente singolare: non \`e nemmeno descrivibile attraverso una funzione
+per singolare che la si voglia pensare.
+Eppure per ogni $t>0$ la soluzione \`e estremamente regolare: ha derivate (usuali)
+di ogni ordine e va rapidamente a $0$ per $x \to \pm \infty$ assieme a tutte
+le proprie derivate.
+Il processo di diffusione \`e quindi {\bf regolarizzante}.
+Infine, istantaneamente ad un qualunque $t>0$ si ha $\Gamma_D(0,x)>0$ per ogni
+$x$. Ci\`o significa che la massa si diffonde istantaneamente dal singolo punto
+$x=0$ e tutto l'asse reale con {\bf velocit\`a di propagazione infinita}.
+Questo a volte \`e un limite nell'applicazione del modello anche se $\Gamma_D(0,x)$
+\`e quasi nulla al di fuori dell'intervallo $[-2D, 2D]$ per $t<<1$ e
+l'integrale in $dx$ su tale intervallo vale l'intera massa $m=1$ per gli
+stessi tempi ``piccoli''.
+\section{Problema di Cauchy omogeneo}
+Risolviamo il sistema
+\[
+	\left\{
+	\begin{array}{l}
+		u_t= Du_{xx}\\
+		u(0,x)= g(x)
+	\end{array}
+	\right. 
+	\substack{\displaystyle{\mathscr{F}} \\ \follows}
+	\left\{
+	\begin{array}{l}
+		v_t= -D\lambda v\\
+		v(0,\lambda)= \hat{g}(\lambda)
+	\end{array}
+	\right. 
+\]
+\[
+	v(t, \lambda)= c(\lambda)e^{-D\lambda^2t}
+\]
+\[
+	v(0,t)= \hat{g}(\lambda)
+\]
+\[
+	\Downarrow
+\]
+\[
+	c(\lambda)= \hat{g}(\lambda)
+\]
+Trovando l'unica soluzione per $v$
+\[
+	v(t,\lambda)= \hat{g}(\lambda)e^{-D\lambda^2t}
+\]
+e antitrasformando ($\mathscr{F}^{-1}$)
+\[
+	u(t,x)= g(x) \circledast \Gamma_D(t,x)
+\]
+Dato che 
+\[
+	\Gamma_D(t,x)=
+	\frac{1}{\sqrt{4D\pi t}}
+	e^{-\left( x^2/4Dt \right)}
+\]
+risultava essere la soluzione fondamentale, cio\`e con $g(x)=\delta(x)$,
+la soluzione generica \`e composta dalla somma di tutti gli effetti elementari
+\[
+	u(t,x)= \frac{1}{\sqrt{4D\pi t}} \intR 
+	e^{\left( -(x-y)^2 / 4Dt \right)}
+	g(y) dy
+\]
+\section{Problema di Cauchy non omogeneo}
+Risolveremo il problema tramite la trasformata di Fourier.
+Tale procedimento fornisce anche un risultato di unicit\`a della soluzione:
+se la trasformata \`e univocamente determinata, tale \`e anche la soluzione.
+\[
+	\left\{
+	\begin{array}{ll}
+		u_t= Du_{xx}+ f & \text{con } f= f(t,x)\\
+		u(0,x)= g(x)
+	\end{array}
+	\right.
+\]
+trasformando con Fourier
+\[
+	v(t,\lambda)= \intR e^{-i\lambda x} u(t,x) dx
+\]
+\[
+	\left\{
+	\begin{array}{l}
+		v_t= -D\lambda^2 v+ \hat{f} \\
+		v(0,\lambda)= \hat{g}(x)
+	\end{array}
+	\right.
+\]
+Consideriamo quindi
+\[
+	v_t + D \lambda^2 v =\hat{f}
+\]
+da cui, moltiplicando per il fattore integrante $e^{D\lambda^2 t}$
+\[
+	e^{D\lambda^2 t} v_t + e^{D\lambda^2 t} D \lambda^2 v 
+	=e^{D\lambda^2 t} \hat{f}
+\]
+\[
+	\frac{d}{dt}\left(
+	e^{D\lambda^2 t} v \right)
+	= e^{D\lambda^2 t} \hat{f}
+\]
+\[
+	e^{D\lambda^2 t} v
+	= \int e^{D\lambda^2 t} \hat{f}(t, \lambda) dt 
+	+\underbracket{C(\lambda)}_{\mathclap{\text{Costanti rispetto a } t}}
+\]
+Dal teorema fondamentale del calcolo integrale
+\[
+	\int_0^t \frac{d}{d\tau}\left(
+	e^{D\lambda^2 \tau} v(\tau, \lambda) \right) d\tau=
+	e^{D\lambda^2 t} v(t, \lambda) - e^{D\lambda^2 0} v(0,\lambda)
+\]
+quindi si pu\`o scrivere
+\[
+	\int_0^t e^{D\lambda^2 \tau} \hat{f}(\tau, \lambda) d\tau
+	= e^{D\lambda^2 t} v(t, \lambda) - e^{D\lambda^2 0} v(0,\lambda)
+	= e^{D\lambda^2 t} v(t, \lambda) - v(0,\lambda)
+\]
+\[
+	\int_0^t e^{D\lambda^2 \tau} \hat{f}(\tau, \lambda) d\tau 
+	+\hat{g}(\lambda)
+	= e^{D\lambda^2 t} v(t, \lambda)
+\]
+\[
+	v(t,\lambda)= e^{-D\lambda^2 t} +\hat{g}(\lambda) 
+	+ \int_0^t e^{-D\lambda^2 (t - \tau)} \hat{f}(\tau, \lambda) d\tau 
+\]
+Antitrasformando, tenuto conto che
+\[
+	\hat{\Gamma}_D(t,\lambda)= e^{-D\lambda^2 t},
+\]
+si ottiene
+\[
+	u(t,x)= \underbracket{\Gamma_D(t,x)\circledast g(x)}_{u_1}+
+	\underbracket{\int_0^t \Gamma_D(t-\tau, x) 
+	\circledast f(\tau, x) d\tau}_{u_2}
+\]
+perci\`o
+\[
+	u(t,x)= u_1(t,x)+ u_2(t,x)
+\]
+Analizzando le varie parti della soluzione, si nota che $u_1$ risolve
+il problema omogeneo senza sorgente facendosi carico della situazione 
+iniziale; in particolare risolve il il problema
+\[
+	\left\{ 
+	\begin{array}{l}
+		u_t=Du_{xx} \\
+		u(0,x)= g(x)
+	\end{array}
+	\right.
+\]
+Per quanto riguarda $u_2$, il termine
+\[
+	\Gamma_D(t-\tau, x) 
+	\circledast f(\tau, x)
+\]
+\`e uguale all'evoluzione al tempo $t$, dopo un tempo trascorso dall'istante 
+$\tau$ all'istante $t$ pari a $t-\tau$, di una densit\`a $f(\tau, x)$ immessa
+sul sistema al tempo $\tau$. Si noti che la convoluzione contrassegnata con 
+$\circledast$ \`e rispetto alla variabile spaziale e non al tempo.\\
+La soluzione $u_2$ risolve
+\[
+	\left\{ 
+	\begin{array}{l}
+		u_t=Du_{xx} +f \\
+		u(0,x)= 0
+	\end{array}
+	\right.
+\]
+\subsection{\texorpdfstring
+{Esercizio: Dimostrare che $u(0,x) \in L^2$, allora $u(t,x) \in L^2$}
+{Esercizio: Dimostrare che se u(0,x) \`e a quadrato sommabile, 
+allora lo \`e anche u(t,x)}}
+Dato il problema
+\[
+	\left\{ 
+	\begin{array}{ll}
+		u_t=Du_{xx} & t>0\\
+		u(0,x)= g(x)
+	\end{array}
+	\right.
+\]
+\[
+	E(t)= \frac{1}{2}\intR \left| u(t,x)\right|^2 dx
+\]
+Utilizzando il teorema di Parseval
+\[
+	\intR \left| u(t,x)\right|^2dx
+	= \frac{1}{2\pi} \intR \left| v(t,\lambda) \right|^2 d\lambda
+\]
+Si noti che \`e stato considerato $u$ reale, perci\`o $u^2= |u|^2$.\\
+Si \`e mostrato in precedenza che la soluzione $v(t,\lambda)$ (cio\`e la 
+trasformata di $u$) \`e
+\[
+	v(t,\lambda)= e^{-D\lambda^2 t} \hat{g}(\lambda)
+\]
+quindi
+\[
+	\left| v(t,\lambda) \right|^2 = e^{-2D\lambda^2 t} 
+	\left| \hat{g}(\lambda) \right|^2
+\]
+e immediatamente si osserva che al crescere del tempo $t$ 
+la funzione decresce.\\
+Riprendendo Parseval
+\[
+	\intR \left| u(t,x)\right|^2 dx= \frac{e^{-2D\lambda^2 t}}{2\pi}
+	\intR \left| \hat{g}(\lambda) \right|^2 d\lambda
+\]
+in $t=0$
+\[
+	\intR \left| \hat{g}(\lambda) \right|^2 d\lambda=
+	2\pi \intR \left| u(0,x)\right|^2 dx
+\]
+\[
+	\intR \left| u(t,x)\right|^2 dx= e^{-2D\lambda^2 t}
+	\intR \left| u(0,x)\right|^2 dx
+\]
+e per qualsiasi $t\geq 0$
+\[
+	\intR \left| u(t,x)\right|^2 dx \leq 
+	\intR \left| g(x) \right|^2 dx
+\]
+In conclusione
+\[
+	E(t)\leq E(0)
+\]
+Sfruttando il risultato appena illustrato si possono ottenere le stesse
+conclusioni del caso finito, cio\`e l'unicit\`a e la dipendenza continua
+dai dati secondo la norma $L^2$
+\[
+	\intR \left| u_1-u_2 \right|^2 dx
+	\leq
+	\intR \left| g_1 - g_2 \right|^2 dx
+\]
