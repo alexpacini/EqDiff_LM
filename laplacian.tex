@@ -193,7 +193,6 @@ si ha
 \[
 	ds= \sqrt{1+ (\alpha ' )^2} dx
 \]
-quindi, dato che il dominio \`e normale,
 \[
 	{\bf T} \cdot \uvi ds= dx
 \]
@@ -218,7 +217,6 @@ si ha
 \[
 	ds= \sqrt{1+ (\beta ' )^2} dx
 \]
-quindi, dato nuovamente il dominio normale,
 \[
 	{\bf T} \cdot \uvi ds= -dx
 \]
@@ -244,3 +242,315 @@ e quindi
 	\int_{\gamma} f(x,y)\uvi \cdot {\bf T} ds =
 	- \int_{\Omega} \partial_y f (x,y) dx dy=
 \]
+Il teorema diventa estendibile anche a domini non normali, data la possibilit\`a di scomporre un dominio qualsiasi in domini normali.
+
+Analoga dimostrazione pu\`o essere fatta per la formula restante, in questo 
+caso utilizzando un dominio perpendicolare all'asse y.
+
+Per un campo $F= f_1 \uvi + f_2 \uvj$ si ottiene
+\[
+	\int_{\gamma} F \cdot {\bf T} ds
+	= \int_{\gamma} f_1 \uvi \cdot {\bf T} ds
+	+ \int_{\gamma} f_2 \uvj \cdot {\bf T} ds
+	= \int_{\Omega} (\partial_x f_2 - \partial_y f_1)dxdy
+\]
+cio\`e la formula di Stokes
+\[
+	\int_{\gamma} F \cdot {\bf T} ds
+	= \int_{\Omega} (\partial_x f_2 - \partial_y f_1)dxdy
+\]
+nel piano. L'integrale doppio pu\`o essere visto come il flusso attraverso la
+superficie piana $\Omega$ di $rot F$ pensando ad $F= f_1 \uvi + f_2 \uvj +0\uvk$ nello spazio.\\
+Inoltre, ricordando che
+\[
+	{\bf N} \cdot \uvi= {\bf T} \cdot \uvj, \;\;\;
+	{\bf N} \cdot \uvj= -{\bf T} \cdot \uvi
+\]
+si ha
+\[
+	\int_{\gamma} F \cdot {\bf N} ds=
+	\int_{\gamma} f_1 \uvi \cdot {\bf N} ds +
+	\int_{\gamma} f_2 \uvj \cdot {\bf N} ds =
+	\int_{\gamma} f_1 \uvj \cdot {\bf T} ds -
+	\int_{\gamma} f_2 \uvi \cdot {\bf T} ds =
+\]
+\[
+	\int_{\Omega} \left( \partial_x f_1 + \partial_y f_2 \right)dxdy
+\]
+che \`e il teorema della divergenza nel piano
+\[
+	\int_{\gamma} F \cdot {\bf N} ds=
+	\int_{\Omega} div F \; dxdy
+\]
+Le formule di Gauss-Green e le loro conseguenze forniscono importati applicazioni
+al Laplaciano.
+
+Per $F= \nabla u$, il teorema della divergenza diventa
+\[
+	\int_{\Omega} \Delta u \; dxdy=
+	\int_{\gamma} \nabla u \cdot {\bf N} ds =
+	\int_{\gamma} \partial_{\bf N} u \; ds
+\]
+in quanto $\nabla u \cdot {\bf N}$ coincide con la derivata
+$ \partial_{\bf N} u$ lungo la normale esterna.\\
+Applicando poi il teorema della divergenza al campo
+\[
+	vF= vf_1 \uvi + vf_2 \uvj
+\]
+si ha
+\[
+	div(vF)= v_x f_1 + v_y f_2 + 
+	v \left( \frac{\partial}{\partial_x} f_1 
+	+ \frac{\partial}{\partial_y} f_2 \right)
+\]
+\[
+	= \nabla v \cdot F + v\, divF
+\]
+perci\`o
+\[
+	\int_{\gamma} vF \cdot {\bf N} ds =
+	\int_{\Omega} div(vF) \; dxdy=
+	\int_{\Omega} \nabla v \cdot F \; dxdy +
+	\int_{\Omega} v\, divF \; dxdy
+\]
+Questa, con $F= \nabla u$, si riduce a
+\[
+	\int_{\gamma} v \, \partial_{\bf N} u \; ds =
+	\int_{\Omega} \nabla v \cdot \nabla u \; dxdy +
+	\int_{\Omega} v\, \Delta u \; dxdy
+\]
+che conviene mettere nella forma di integrale per parti per il Laplaciano
+\[
+	\int_{\Omega} v\, \Delta u \; dxdy =
+	\int_{\gamma} v \, \partial_{\bf N} u \; ds -
+	\int_{\Omega} \nabla v \cdot \nabla u \; dxdy
+\]
+\section{Problemi ben posti}
+Sia $\Omega$ un dominio limitato di $\mathbb{R}^2$ con frontiera $\gamma$
+curva chiusa regolare a tratti orientata in senso positivo.
+I problemi ben posti per l'equazione $\Delta u= f$ in $Omega$ sono quelli
+visti per la diffusione, senza dato iniziale mancando la variabile tempo.\\
+Per il problema di Dirichlet:
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta u= f & \text{in} \;\;\; \Omega \\
+		u= g & \text{in} \;\;\; \gamma
+	\end{array}
+	\right.
+\]
+Per il problema di Neumann:
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta u= f & \text{in} \;\;\; \Omega \\
+		\partial_{\bf N}u= h & \text{in} \;\;\; \gamma
+	\end{array}
+	\right.
+\]
+La formula
+\[
+	\int_{\Omega} \Delta u \; dxdy=
+	\int_{\gamma} \partial_{\bf N} u \; ds
+\]
+fornisce una condizione di compatibilit\`a tra la sorgente $f$ ed il flusso
+uscente $h$ nel problema di Neumann. La condizione necessaria per l'esistenza
+di soluzioni \`e
+\[
+	\int_{\Omega} f \; dxdy=
+	\int_{\gamma} h \; ds
+\]
+
+\section{Unicit\`a}
+Si mostra che i problemi con dati iniziali coincidenti hanno la stessa
+soluzione.\\
+Se $u_1$ $u_2$ sono due soluzioni allora
+\[
+	w=u_1- u_2
+\]
+risolve 
+\[
+	\Delta w = 0 \;\;\; \text{in} \;\;\; \Omega
+\]
+con condizioni al contorno
+\[
+	\begin{array}{lll}
+		w=0 & \text{in } \gamma & \text{Dirichlet}\\
+		\partial_{\bf N}w=0 & \text{in } \gamma & \text{Neumann}\\
+	\end{array}
+\]
+Sostituendo $u=v=w$ nella formula dell'integrale per parti 
+(equivalente ad usare il campo $div\, (ww)= div\, w^2$)
+\[
+	\int_{\Omega} w \Delta w \, dxdy= 
+	- \int_{\Omega} \nabla w \cdot \nabla w \, dxdy
+	+ \int_{\gamma} w \partial_{\bf N} w \, ds
+\]
+il termine
+\[
+	\int_{\gamma} w \partial_{\bf N} w \, ds
+\]
+\`e nullo sia con condizioni di Neumann nulle ($\partial_{\bf N} w =0 $) sia
+con le condizioni di Dirichlet nulle ($w=0$).
+Perci\`o, data la definizione $\Delta w= 0$,
+\[
+	0= - \int_{\Omega} \left|\left| \nabla w \right|\right|^2 \, dxdy +0
+\]
+\[
+	\int_{\Omega} \left|\left| \nabla w \right|\right|^2 \, dxdy = 0
+\]
+L'unica soluzione, essendo somma di quadrati, \`e 
+\[
+	\nabla w=0
+\]
+in $\Omega$. Quindi
+\[
+	w=C \;\;\; \text{in} \;\;\; \Omega
+\]
+Questo pone l'unicit\`a a meno di costanti nel caso di Neumann.\\
+Per Dirichlet deve essere $w=c=0$ in $\gamma$ (o almeno $\gamma_0$),
+quindi $w=0$ ovunque nella chiusura $\bar{\Omega}= \Omega \cup \gamma$ di $\Omega$.
+\section{Propriet\`a di media}
+Sia $u(x,y)$ armonica in $\Omega \leq \mathbb{R}^2$
+\[
+	\Delta u= 0 \;\;\; \text{in} \;\;\; \Omega
+\]
+Denotiamo con $\Omega_R(x,y)$ un generico cerchio di centro $(x,y)$ e raggio
+$R$ contenuto in $\Omega$ e con $\gamma_R(x,y)$ la circonferenza di frontiera
+orientata positivamente.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{mean_f.pdf}
+	\caption{Circonferenza di frontiera $\gamma_R$}
+	\label{mean_f}
+\end{figure}
+\noindent
+\subsection{Formule di media}
+In tale dominio circolare valgono le formule di media
+\[
+	u(\bar{x}, \bar{y})= \frac{1}{\pi R^2}
+	\int \limits_{\Omega_R}
+	u(x,y) \, dxdy
+\]
+\[
+	u(\bar{x}, \bar{y})= \frac{1}{2 \pi R}
+	\int \limits_{\gamma_R}
+	u \, ds
+\]
+con $ds$ l'elemento di lunghezza sulla circonferenza.
+\subsubsection{Dimostrazione}
+Iniziamo dalla seconda. Per $0<\pi<R$ poniamo 
+\[
+	g(r)= \frac{1}{2\pi r}
+	\int \limits_{\gamma_r}
+	u \, ds=
+	\frac{1}{2\pi r}
+	\int_0^{2\pi}
+	u(\bar{x}+rcos \theta, \bar{y} + rsin \theta) \, r d\theta
+\]
+\[
+	= \frac{1}{2\pi}
+	\int_0^{2\pi}
+	u(\bar{x}+rcos \theta, \bar{y} + rsin \theta) \, d\theta
+\]
+dove si \`e usata la parametrizzazione di $\gamma_r(x,y)$
+\[
+	\left\{
+		\begin{array}{l}
+			x= \bar{x} + rcos\theta \\
+			y= \bar{y} + rsin\theta
+		\end{array}
+	\right.
+\]
+con $0 \leq \theta \leq 2\pi$.\\
+Dove $x'=-rsin \theta$, $y'= rcos \theta$, $ds= \sqrt{(x')^2+ (y')^2}= rd\theta$.\\
+Derivando $g(r)$ abbiamo
+\[
+	g'(r)= \frac{1}{2\pi}
+	\int_0^{2\pi} 
+	\left(
+		u_x cos\theta + u_y sin \theta
+	\right)d\theta=
+	\frac{1}{2\pi r}
+	\int \limits_{\gamma_r} \nabla u \cdot {\bf N} ds
+\]
+dove si \`e usato
+\[
+	{\bf N} = cos\theta \uvi + sin \theta \uvj , \;\;\;
+	d\theta= \frac{ds}{r}
+\]
+Per il teorema della divergenza
+\[
+	\frac{1}{2\pi r}
+	\int \limits_{\gamma_r} \nabla u \cdot {\bf N} ds=
+	\int \limits_{\Omega_r} div (\nabla u) dxdy=
+	\int \limits_{\Omega_r} \Delta u \, dxdy= 0
+\]
+cio\`e $g(r)$ costante.\\
+Poich\'e 
+\[
+	\lim_{r \to 0} g(r)=
+	\lim_{r \to 0} \frac{1}{2 \pi}
+	\int_0^{2\pi} 
+	u(\bar{x}+rcos \theta, \bar{y} + rsin \theta) \, d\theta=
+	\frac{1}{2 \pi} \int_0^{2\pi}
+	u(\bar{x}, \bar{y}) d\theta
+\]
+\[
+	= u(\bar{x}, \bar{y})
+\]
+abbiamo
+\[
+	g(r)= u(\bar{x}, \bar{y}) \;\;\; \text{per ogni} \;\;\; r \in (0,R]
+\]
+il ch\'e prova la formula di media voluta.\\
+Da questa si ottiene anche l'altra. Infatti da
+\[
+	u(\bar{x}, \bar{y})=
+	\frac{1}{2 \pi} \int_0^{2 \pi}
+	u(\bar{x}+rcos \theta, \bar{y} + rsin \theta) \, d\theta
+\]
+moltiplicando per $r$ ed integrando in $dr$ tra $0$ e $R$, segue
+\[
+	u(\bar{x}, \bar{y})\int_0^R rdr=
+	\frac{1}{2\pi}\int_0^R
+	\int_0^{2\pi}
+	u(\bar{x}+rcos \theta, \bar{y} + rsin \theta) \, rd\theta dr
+\]
+\[
+	u(\bar{x}, \bar{y})\frac{R^2}{2}=
+	\frac{1}{2\pi} \int \limits_{\Omega_R} u(x,y) \, dxdy
+\]
+con $rdrd\theta= dxdy$.\\
+Da cui
+\[
+	u(\bar{x}, \bar{y})=
+	\frac{1}{\pi R^2}
+	\int \limits_{\Omega_R} u(x,y) \, dxdy
+\]
+Queste ci dicono che i valori delle funzioni armoniche sono molto rigide.
+Per calcolare la $u$ nel centro, sapendo che \`e armonica, basta avere i
+valori sul bordo (del cerchio!).\\
+Vedremo che, viceversa, una funzione che soddisfa la propriet\`a di media \`e
+armonica. Da questa equivalenza seguir\`a poi che ogni funzione armonica \`e
+$C^{\infty}$.
+\subsection{Principi di massimo}
+Una funzione che soddisfa la propriet\`a di media in $\Omega$ che non sia
+una funzione costante non pu\`o avere massimi o minimi globali interni ad $\Omega$.
+Per vedere questo, basta vedere che se $u(x,y)$ in $\Omega$ assume valore
+minimo (massimo) assoluto in $(\bar{x}, \bar{y})$ interno ad $\Omega$, 
+allora \`e costante in ogni cerchio $\Omega_R(\bar{x}, \bar{y})\subset \Omega$.
+Se vale questo, infatti, tutti i punti di $\Omega_R(\bar{x}, \bar{y})$ diventano
+di minimo (massimo) assoluto.
+Il centro $(\bar{x}, \bar{y})$ pu\`o essere sostituito dai punti arbitrariamente
+vicini al bordo di $\Omega_R(\bar{x}, \bar{y})$ e la regione dove $u$ \`e costante
+pu\`o essere allargata.
+Con questo procedimento si giunge a far vedere che $u$ \`e costante su tutto
+l'aperto e connesso $\Omega$.
+\subsubsection{Teorema}
+La  funzione $u$ soddisfi le propriet\`a di media in $\Omega$.
+Se $u(\bar{x}, \bar{y})=m$ \`e minimo assoluto allora $u(x,y)=m$ in tutti
+i punti di $\Omega_R(\bar{x}, \bar{y})\subset \Omega$.
+\subsubsection{Dimostrazione}
+Supponiamo che $u(x,y)\geq m_1 > m$ in $\Omega_r (x_0, y_0)\subset \Omega_R (\bar{x}, \bar{y})$.
+Allora
