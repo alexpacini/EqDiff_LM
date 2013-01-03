@@ -554,3 +554,267 @@ i punti di $\Omega_R(\bar{x}, \bar{y})\subset \Omega$.
 \subsubsection{Dimostrazione}
 Supponiamo che $u(x,y)\geq m_1 > m$ in $\Omega_r (x_0, y_0)\subset \Omega_R (\bar{x}, \bar{y})$.
 Allora
+\[
+	m= u(\bar{x}, \bar{y})=
+	\frac{1}{\pi R^2}
+	\int \limits_{\Omega_R} u(x,y) dx dy
+\]
+\[
+	= \frac{1}{\pi R^2} \left\{
+	\int \limits_{\mathrlap{\Omega_R (\bar{x}, \bar{y}) - \Omega_r (x_0,y_0)}}
+	u(x,y) \, dxdy + 
+	\int \limits_{\mathrlap{\Omega_r (x_0,y_0)}}
+	u(x,y) \, dxdy + 
+	\right\}
+\]
+\[
+	\geq \frac{1}{\pi R^2} \left\{
+	\int \limits_{\mathrlap{\Omega_R (\bar{x}, \bar{y}) - \Omega_r (x_0,y_0)}}
+	m \, dxdy \;\;\;\; + \;\;\;\;
+	\int \limits_{\mathrlap{\Omega_r (x_0,y_0)}}
+	m_1 \, dxdy
+	\right\}
+\]
+\[
+	= \frac{1}{\pi R^2} \left\{
+	m \cdot \text{Area} \left( \Omega_R (\bar{x}, \bar{y}) - \Omega_r (x_0,y_0) \right) +
+	m_1 \cdot \text{Area} \left(\Omega_r (x_0,y_0) \right)
+	\right\} 
+\]
+\[
+	= \frac{1}{\pi R^2} \left\{
+	m (\pi R^2 - \pi r^2) + m_1 \pi r^2
+	\right\} 
+\]
+\[
+	> \frac{1}{\pi R^2} \left\{
+	m (\pi R^2 - \pi r^2) + m \pi r^2
+	\right\} =
+	\frac{1}{\pi R^2} m\pi R^2 = m
+\]
+Siamo all'assurdo
+\[
+	m>m
+\]
+La funzione $u$ non pu\`o assumere valori $m_1>m$ all'interno di 
+$\Omega_R(\bar{x}, \bar{y})$.
+Analogo risultato vale per i punti di massimo.
+\subsubsection{Teorema}
+La funzione $u$ soddisfi la propriet\`a di media nell'aperto connesso $\Omega$.
+se $u$ ha minimo o massimo assoluti interni ad $\Omega$, allora $u$ \`e costante
+in $\Omega$.
+\subsubsection{Lemma}
+Se $\Omega$ \`e limitato ed $u$ \`e continua nella chiusura $\bar{\Omega}$,
+allora ha certamente massimo e minimo assoluti in $\bar{\Omega}$ per il 
+teorema di Weierstrass. Questi valori non possono essere assunti nei punti
+interni, a meno che non sia costante, quindi sono assunti sulla frontiera.
+
+\subsubsection{Teorema}
+Se $u$ \`e continua in $\bar{\Omega}$ con $\Omega$ aperto, connesso e limitato
+e soddisfa la propriet\`a di media in $\Omega$, allora
+\[
+	\max_{\bar{\Omega}} u= \max_{\gamma} u, \;\;\;
+	\min_{\bar{\Omega}} u= \min_{\gamma} u
+\]
+\[
+	\Downarrow
+\]
+\[
+	\max_{\bar{\Omega}} |u|= \max_{\gamma} |u|
+\]
+con $\gamma$ la frontiera di $\Omega$.\\
+Qualitativamente, l'unico punto in cui l'eventuale $u(\bar{x}, \bar{y})$ pu\`o 
+essere massimo o minimo \`e sulla frontiera, dove $\gamma_r$ ha diametro 
+infinitesimo e il valore all'interno di $\gamma_r$ pu\`o essere considerato
+costante. In tutti gli altri casi deve essere sulla frontiera di $\gamma_r$; 
+perci\`o preso il dominio $\bar{\Omega}$, i minimi e massimi possono essere solo sulla frontiera.
+\section{Unicit\`a e dipendenza continua dai dati}
+Presa una funzione armonica, essa soddisfa la propriet\`a di media.
+Attraverso di essa possiamo dedurre un risultato di unicit\`a e dipendenza
+continua dai dati per il problema di Dirichlet, senza ipotesi di regolarit\`a
+sulla frontiera ed assumendo che $u$ sia solo continua in $\bar{\Omega}$.
+\subsubsection{Teorema}
+Sia $\Omega$ aperto, connesso e limitato in $\mathbb{R}^2$ e sia $g$ continua
+nella frontiera $\gamma$ di $\Omega$.
+Il problema
+\[
+	\begin{array}{ll}
+		\Delta u= 0 & \text{in }\Omega \\
+		u= g & \text{in }\gamma \\
+	\end{array}
+\]
+ha al pi\`u una soluzione $u \in C^2 (\Omega) \cap C(\bar{\Omega})$
+Inoltre, se $u_g$ indica la soluzione corrispondente al dato $g$, si ha
+\[
+	\max_{\bar{\Omega}} \left| u_{g_1} - u_{g_2} \right|=
+	\max_{\gamma} \left| g_1 - g_2 \right|
+\]
+\subsubsection{Dimostrazione}
+La funzione $u_{g_1} - u_{g_2}$ \`e armonica in $\Omega$ e continua in $\bar{\Omega}$.\\
+$\left| u_{g_1} - u_{g_2} \right|$ ha massimo in $\bar{\Omega}$, assunto sulla
+frontiera $\gamma$. \\ Dunque
+\[
+	\max_{\bar{\Omega}} \left| u_{g_1} - u_{g_2} \right|=
+	\max_{\gamma} \left| u_{g_1} - u_{g_2} \right|=
+	\max_{\gamma} \left| g_1 - g_2 \right|
+\]
+poich\'e $u_g$ in $\gamma$ \`e uguale a $g$.\\
+Il risultato precedente dimostra la dipendenza continua dai dati.
+Ora se $g_1=g_2$ allora da questo segue $g_1=g_2$ in $\bar{\Omega}$, cio\`e
+l'unicit\`a della soluzione.
+\section{Esistenza della soluzione}
+I teoremi di esistenza sono pi\`u difficili di quelli di unicit\`a.
+I lcaso pi\`u semplice \`e quello di $\Omega$ cerchio nel piano dove si 
+possono utilizzare le coordinate polari. \`E quindi necessario procurarsi
+l'espressione di $\Delta$ in queste coordinate.
+\footnote{Vedi anche 
+\url{http://www1.mate.polimi.it/~bramanti/corsi/archivio_pdf/laplaciano.pdf}}
+\subsection{Laplaciano in coordinate polari}
+Per $u(r(x,y), \theta (x,y))$, ricordando che 
+\[
+	\partial_x r= \partial_x\sqrt{x^2 + y^2}=\frac{x}{\sqrt{x^2 + y^2}}= cos \theta
+\]
+\[
+	\partial_y r= \partial_y\sqrt{x^2 + y^2}=\frac{y}{\sqrt{x^2 + y^2}}= sin \theta
+\]
+\[
+	\partial_x \theta= \partial_x arctan \frac{y}{x}=
+	\frac{1}{1 +\frac{y^2}{x^2}} \left( - \frac{y}{x^2} \right)
+\]
+\[
+	\partial_y \theta= \partial_y arctan \frac{y}{x}=
+	\frac{1}{1 +\frac{y^2}{x^2}} \; \frac{1}{x}
+\]
+si ha
+\[
+	\partial_x u= cos \theta \partial_r u - \frac{sin \theta}{r} \partial_{\theta} u
+\]
+\[
+	\partial_y u= sin \theta \partial_r u + \frac{cos \theta}{r} \partial_{\theta} u
+\]
+Calcolando 
+\[
+	\partial_x^2 u = \partial_x(\partial_x u)= 
+	\left( cos \theta \partial_r  - \frac{sin \theta}{r} \partial_{\theta} \right)
+	\left( cos \theta \partial_r u - \frac{sin \theta}{r} \partial_{\theta} u \right)
+\]
+ed eseguendo tutte le derivate e sommando si arriva a
+\[
+	\Delta u = \partial^2_r u + \frac{1}{r} \partial_r u +\frac{1}{r^2}\partial^2_{\theta} u 
+\]
+\subsection{Formula di Poisson}
+Risolviamo quindi il problema di Dirichlet nel cerchio
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta u=0 	& \text{in} \Omega_R(\bar{x}, \bar{y}) \\
+		u=g 		& \text{in} \gamma_R(\bar{x}, \bar{y})
+	\end{array}
+	\right.
+\]
+Col metodo della \textit{separazione delle variabili} in coordinate polari
+\[
+	\begin{array}{ll}
+		x= \bar{x} + rcos \theta & 0 \leq \theta \leq 2 \pi \\
+		y= \bar{y} + rsin \theta & 0 \leq r \leq R
+	\end{array}
+\]
+poniamo
+\[
+	u= v(r)w(\theta)
+\]
+dove $w(\theta)$ deve essere periodica di periodo $2 \pi$.
+\[
+	\Delta u = 0
+\]
+\[
+	\Downarrow
+\]
+\[
+	v''(r)w(\theta)+ \frac{1}{r^2}v(r)w''(\theta)+ \frac{1}{r}v'(r)w(\theta)=0
+\]
+da cui, dividendo per $u= v(r)w(\theta)$ e moltiplicando per $r^2$
+\[
+	r^2 \frac{ v''(r)}{v(r)} + r \frac{v'(r)}{v(r)}= 
+	-\frac{w''(\theta)}{w(\theta)}
+\]
+Le due funzioni possono coincidere solo se costanti
+\[
+	- \frac{w''(\theta)}{w(\theta)}= k =
+	r^2 \frac{ v''(r)}{v(r)} + r \frac{v'(r)}{v(r)}
+\]
+Inizialmente
+\[
+	w''(\theta)+ kw(\theta) =0
+\]
+\[
+	\lambda^2 + k=0, \follows \lambda^2 = -k
+\]
+che ha soluzioni periodiche solo se $k > 0$.
+In questo caso
+\[
+	\lambda= \pm i\sqrt{k}
+\]
+e
+\[
+	w= Acos(\sqrt{k} \theta)+ Bsin(\sqrt{k} \theta)
+\]
+Essa deve necessariamente avere periodo $2\pi$, cio\`e equivalente al periodo
+del cerchio che delimita il dominio (effettivamente dopo un giro \`e sempre
+la stessa soluzione).
+Il periodo indicato si ha solo per $\sqrt{k}= 0,1,2,\ldots$, quindi 
+$k= 0,1,4, \ldots$ in particolare $k=m^2$ con $m \in \mathbb{N}+\{0\}$.
+Abbiamo ottenuto le soluzioni
+\[
+	w_m= A_m cos (m\theta)+ B_m sin (m \theta), \;\;\; m=1,2,3,\ldots
+\]
+\[
+	w_0= A_0/2= \text{ costante } (m=0)
+\]
+Risolviamo ora
+\[
+	r^2 v''(r)+ rv'(r)- m^2 v(r)=0
+\]
+Si tratta di una \textit{Equazione di Eulero} (l'esponente eguaglia il grado
+della derivata) e si riduce ad una a coefficienti costanti ponendo
+\[
+	v(r)= y(ln r), \;\;\; v'(r)= \frac{1}{r} y'(ln r)
+\]
+\[
+	v''(r)= \frac{1}{r^2}y''(ln r) + \left( - \frac{1}{r^2} \right)y'(ln r)
+\]
+Si ottiene, sostituendo $t= ln r$
+\[
+	y''(t)- \cancel{y'(t)}+ \cancel{y'(t)} - m^2 y(t)=0
+\]
+\[
+	y''(t) - m^2 y(t)=0
+\]
+che \`e effettivamente a coefficienti costanti.\\
+L'equazione caratteristica
+\[
+	\lambda^2 - m^2=0 \follows \lambda= \pm m
+\]
+porta alle soluzioni linearmente indipendenti (tenuto conto che $m\geq 0$)
+\[
+	y_1(t)= e^{mt}, \;\;\; y_2(t)= e^{-mt}
+\]
+Ora ritorno alla variabile in r con la sostituzione $t= ln r$
+\[
+	v_1(r)= e^{m lnr}= r^m
+\]
+\[
+	v_2(r)= e^{-m lnr}= r^{-m}
+\]
+La soluzione $v_2$ deve essere scartata perch\'e in $m=0$ diverge.
+Resta quindi la sola soluzione $v_1=r^m$.\\
+Abbiamo cos\`i ottenuto la famiglia di funzioni armoniche
+\[
+	u_m= A_m r^m cos(m \theta)+ B_m r^m sin (m \theta), \;\;\; u_0= A_0/2
+\]
+Per linearit\`a, se si pu\`o derivare sotto il segno di serie,
+\[
+	u= \frac{A_0}{2} + \sum_{m=1}^{\infty}
+	A_m r^m cos(m \theta)+ B_m r^m sin (m \theta)
+\]
+\`e una soluzione di $\Delta u=0$ nel cerchio.
