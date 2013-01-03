@@ -707,8 +707,8 @@ Risolviamo quindi il problema di Dirichlet nel cerchio
 \[
 	\left\{
 	\begin{array}{ll}
-		\Delta u=0 	& \text{in} \Omega_R(\bar{x}, \bar{y}) \\
-		u=g 		& \text{in} \gamma_R(\bar{x}, \bar{y})
+		\Delta u=0 	& \text{in } \Omega_R(\bar{x}, \bar{y}) \\
+		u=g 		& \text{in } \gamma_R(\bar{x}, \bar{y})
 	\end{array}
 	\right.
 \]
@@ -817,4 +817,420 @@ Per linearit\`a, se si pu\`o derivare sotto il segno di serie,
 	u= \frac{A_0}{2} + \sum_{m=1}^{\infty}
 	A_m r^m cos(m \theta)+ B_m r^m sin (m \theta)
 \]
-\`e una soluzione di $\Delta u=0$ nel cerchio.
+\`e una soluzione di $\Delta u=0$ nel cerchio, con $A_m$, $B_m$ coefficienti
+tali che $u$ sia ancora soluzione di $\Delta u= 0$ derivando termine a termine.\\
+Per $r=R$ deve essere $u=g$; la condizione si realizza con
+\[
+	u(R, \theta)= G(\theta)= g(\bar{x}+ Rcos \theta, \bar{y} + Rsin\theta)
+\]
+si scrive la serie di Fourier di $G$
+\[
+	G(\theta) \sim \frac{a_0}{2}+ 
+	\sum_{m=1}^{\infty} a_m cos (m \theta) + b_m sin (m \theta)
+\]
+dove i coefficienti sono dati da
+\[
+	a_m = \frac{1}{\pi}
+	\int_{0}^{2 \pi} G(\theta)cos(m \theta) d\theta \; , \;\;\; m=0,1,2,\ldots
+\]
+\[
+	b_m = \frac{1}{\pi}
+	\int_{0}^{2 \pi} G(\theta)sin(m \theta) d\theta \; , \;\;\; m=1,2,\ldots
+\]
+Deve essere
+\[
+	A_0=a_0, \;\;\; A_m=\frac{a_m}{R^m}, \;\;\; B_m = \frac{b_m}{R^m}
+\]
+Con questa scelta si vede che per $g$ continua, la funzione
+\[
+	u=\frac{A_0}{2}+ \sum_{m=1}^{\infty} \left(
+	A_mr^m cos (m \theta)+ B_m r^m sin (m \theta)
+	\right)
+\]
+risolve
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta u=0 	& \text{in } \Omega_R(\bar{x}, \bar{y}) \\
+		u=g 		& \text{in } \gamma_R(\bar{x}, \bar{y})
+	\end{array}
+	\right.
+\]
+Tale soluzione \`e in realt\`a $C^{\infty}$ all'interno di $\Omega_R (\bar{x}, \bar{y})$
+e continua nel cerchio chiuso. Come gi\`a sappiamo, \`e l'unica soluzione.
+Vogliamo ora semplificarne l'espressione. Per evitare incomprensioni con la
+notazione, riscriviamo i coefficienti
+\[
+	A_m = \frac{1}{\pi R^m}
+	\int_{0}^{2 \pi} G(\phi)cos(m \phi) d\phi
+\]
+\[
+	B_m = \frac{1}{\pi R^m}
+	\int_{0}^{2 \pi} G(\phi)sin(m \phi) d\phi
+\]
+Si ha, scambiando i simboli di serie e di integrale,
+\[
+	u= \frac{1}{\pi} \int_{0}^{2\pi} G(\phi)
+	\left[
+	\frac{1}{2}+ \sum_{m=1}^{\infty} \left( \frac{r}{R} \right)^m
+	\left(
+	cos(m \phi)cos(m \theta) + sin(m\phi)sin(m \theta)
+	\right)
+	\right] d\phi
+\]
+\[
+	= \frac{1}{\pi} \int_{0}^{2\pi} G(\phi)
+	\left[
+	\frac{1}{2}+ \sum_{m=1}^{\infty} \left( \frac{r}{R} \right)^m
+	cos (m(\phi - \theta))
+	\right] d\phi
+\]
+Ora
+\[
+	cos(m(\phi - \theta))= {\mathcal Re}(e^{im(\phi - \theta)})
+\]
+quindi la serie vale, per $r>R$,
+\[
+	{\mathcal Re} \left(
+	\sum_{m=1}^{\infty} \left( \frac{r}{R} e^{i(\phi - \theta)} \right)^m
+	\right)
+	=
+	{\mathcal Re} \left(
+	\frac{1}{1 - \frac{r}{R} e^{i(\phi - \theta)}}
+	\right) -1
+\]
+\[
+	= {\mathcal Re} \left(
+	\frac{R}{R -rcos(\phi - \theta) - i \, rsin (\phi - \theta)}
+	\right) -1
+\]
+razionalizzando
+\[
+	= {\mathcal Re} \left(
+	\frac{R^2 - Rrcos(\phi - \theta) + i \, Rr sin (\phi - \theta)}
+	{\left( R- rcos (\phi - \theta) \right)^2 + r^2 sin^2 (\phi - \theta)}
+	\right) -1
+\]
+quindi
+\[
+	=\frac{R^2 - Rrcos(\phi - \theta)}
+	{R^2 + r^2 -2Rrcos(\phi - \theta)}
+	-1
+\]
+La soluzione si scrive 
+\[
+	u= \frac{1}{\pi} \int_{0}^{2\pi} G(\phi)
+	\left( \frac{1}{2}+
+	\frac{Rrcos(\phi - \theta) -r^2}
+	{R^2 + r^2 -2Rrcos(\phi - \theta)}
+	\right)
+	d\phi
+\]
+\[
+	= \frac{1}{2 \pi} \int_{0}^{2\pi} G(\phi)
+	\frac{R^2 + r^2 -\cancel{2Rrcos(\phi - \theta)} + 
+	\cancel{2Rrcos(\phi - \theta)} -2r^2 }
+	{R^2 + r^2 -2Rrcos(\phi - \theta)}
+	d\phi
+\]
+\[
+	u = \frac{1}{2 \pi} \int_{0}^{2\pi} G(\phi)
+	\frac{R^2 - r^2 }
+	{R^2 + r^2 -2Rrcos(\phi - \theta)}
+	d\phi
+\]
+I termini da infiniti sono diventati un termine singolo.\\
+Torniamo alle variabili cartesiane
+\[
+	\left\{ 
+	\begin{array}{ll}
+		x= x(r, \theta)= \bar{x} + rcos \theta 
+		& \text{in } \Omega_R (\bar{x},\bar{y}) \\
+		y= y(r, \theta)= \bar{y} + rsin \theta
+	\end{array}
+	\right.
+\]
+\[
+	\left\{ 
+	\begin{array}{ll}
+		\sigma= \sigma(\phi)= \bar{x} + Rcos \phi
+		& \text{in } \gamma_R (\bar{x},\bar{y}) \\
+		\eta= \eta(\phi)= \bar{y} + Rsin \phi
+	\end{array}
+	\right. 
+\]
+infatti con $r=R \follows \theta \longrightarrow \phi$ \\
+la quantit\`a
+\[
+	R^2 + r^2 -2Rrcos(\phi - \theta) =
+	\left( x(r, \theta)- \sigma (\phi) \right)^2 +
+	\left( y(r, \theta)- \eta (\phi) \right)^2
+\]
+Attraverso il teorema del coseno\footnote{Vedi anche
+\url{http://wikipedia.org/wiki/Law_of_cosines}
+} (o di Carnot) oppure utilizzando le espressioni di 
+$x (r, \theta)$, $y(r, \theta)$, $\sigma (\phi)$, $\eta (\phi)$ (l'angolo
+opposto ad $a$ \`e $\phi - \theta$)
+\[
+a^2= R^2 +r^2 -2Rrcos(\phi - \theta)
+\]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{car_th.pdf}
+	\caption{Teorema di Carnot}
+	\label{car_th}
+\end{figure}
+
+L'elemento di lunghezza infinitesima in $\gamma_R (\bar{x}, \bar{y})$ \`e
+\[
+	ds= Rd\phi
+\]
+quindi si ottiene l'importante formula di Poisson
+\[
+	u(x,y)= \frac{r^2 - (x - \bar{x})^2 - (y -\bar{y})^2}{2 \pi R}
+	\int_{\gamma_R} \frac{g(\sigma, \eta)}{(x - \sigma)^2+(y - \eta)^2} ds
+\]
+Provando con $(x,y)=(\bar{x},\bar{y})$ si ottiene la prima formula di media.
+\[
+	u (\bar{x},\bar{y}) = \frac{\cancel{R^2}}{2\pi R}
+	\int_{\gamma_r} \frac{g}{\cancel{R^2}} ds=
+	\frac{1}{2\pi R}
+	\int_{\gamma_r} g ds=
+\]
+\subsubsection{Riassumendo}
+Sia $g$ continua. L'unica soluzione 
+$u \in C^2 (\Omega_R (\bar{x}, \bar{y})) \cap C( \bar{ \Omega}_R (\bar{x}, \bar{y}))$ di
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta u=0 	& \text{in } \Omega_R(\bar{x}, \bar{y}) \\
+		u=g 		& \text{in } \gamma_R(\bar{x}, \bar{y})
+	\end{array}
+	\right.
+\]
+\`e data da
+\[
+	u(x,y)= \frac{r^2 - (x - \bar{x})^2 - (y -\bar{y})^2}{2 \pi R}
+	\int_{\gamma_R} \frac{g(\sigma, \eta)}{(x - \sigma)^2+(y - \eta)^2} \; ds
+\]
+Tale soluzione \`e $C^{\infty}$ in $\Omega_R(\bar{x}, \bar{y})$.
+
+\subsection{\texorpdfstring
+{Le funzioni con propriet\`a di media sono armoniche e $\in C^{\infty}$}
+{Le funzioni con propriet\`a di media sono armoniche e C inf}}
+Abbiamo visto che le funzioni armoniche hanno la propriet\`a di media.
+Vediamo ora che ogni funzione con propriet\`a di media \`e armonica e
+$C^{\infty}$.
+\subsubsection{Teorema}
+Sia $u$ continua in $\Omega$ con la propriet\`a di media nei cerchi di
+$\Omega$. Allora $u$ \`e armonica in $\Omega$ e $C^{\infty}$ in $\Omega$.\\
+In particolare ogni funzione armonica \`e $C^{\infty}$.
+\subsubsection{Dimostrazione}
+Sia $\Omega_R(\bar{x}, \bar{y})$ un cerchio in $\Omega$ e consideriamo il
+problema
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta v=0 	& \text{in } \Omega_R(\bar{x}, \bar{y}) \\
+		v=u		& \text{in } \gamma_R(\bar{x}, \bar{y})
+	\end{array}
+	\right.
+\]
+La funzione \`e armonica quindi ha la propriet\`a di media come $u$.
+La differenza $u-v$ ha la propriet\`a di media (linearit\`a dell'integrale)
+quindi
+\[
+	\max_{\bar{\Omega}_R(\bar{x}, \bar{y})} |u-v|=
+	\max_{{\gamma}_R(\bar{x}, \bar{y})} |u-v|
+\]
+per il principio di massimo di cui godono le funzioni con tale propriet\`a.
+Sul bordo ${\gamma}_R(\bar{x}, \bar{y})$ si ha $u-v=0$ quindi $u=v$ anche in
+$\Omega_R(\bar{x}, \bar{y})$.
+La funzione $u$ \`e quindi armonica e $C^{\infty}$ in quanto si rappresenta
+con la formula di Poisson in $\Omega_R(\bar{x}, \bar{y})$.
+Per l'arbitrariet\`a di $\Omega_R(\bar{x}, \bar{y})$, ci\`o rimane vero in
+tutto $\Omega$.
+\subsection{L'equazione di Poisson}
+Il metodo della separazione delle variabili si pu\`o applicare anche al 
+problema non omogeneo
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta u= f	& \text{in } \Omega_R(\bar{x}, \bar{y}) \\
+		u=0		& \text{in } \gamma_R(\bar{x}, \bar{y})
+	\end{array}
+	\right.
+\]
+con $f$ funzione continua. Passiamo nelle coordinate polari e scriviamo
+\[
+	f(r, \theta)= f(\bar{x}+rcos \theta, \bar{y}+ rsin \theta)
+\]
+Per ogni $r \in (0,R)$, $f(r, \theta)$ \`e una funzione periodica di $\theta$
+con $T=2\pi$. Si pu\`o quindi scrivere in serie di Fourier.
+\[
+	f(r,\theta)= 	\frac{a_0(r)}{2}+  \sum_{m=1}^{\infty} \left[
+	a_m (r) cos (m \theta)+
+	b_m(r) sin (m\theta) 	
+	\right]	
+\]
+Cerchiamo ora una soluzione dello stesso tipo
+\[
+	u(r,\theta)= 	\frac{A_0(r)}{2}+  \sum_{m=1}^{\infty} \left[
+	A_m (r) cos (m \theta)+
+	B_m(r) sin (m\theta) 	
+	\right]	
+\]
+dove in questo caso i coefficienti sono incognite.\\
+Imponiamo, con il Laplaciano in coordinate polari, $\Delta u= f$ termine
+a termine.
+\[
+	\Delta = \partial_r^2 +\frac{1}{r}\partial_r + \frac{1}{r^2}\partial_{\theta}^2
+\]
+Si ottiene
+\begin{align*}
+	\Delta u = \frac{A_0''(r)+ \frac{1}{r}A_0'(r)}{2} &+
+	\sum_{m=1}^{\infty} \left(
+	A_m''(r) + \frac{1}{r} A_m'(r) -\frac{m^2}{r^2}A_m(r)
+	\right)cos(m\theta) + \\
+	&+ \sum_{m=1}^{\infty} \left(
+	B_m''(r) + \frac{1}{r} B_m'(r) -\frac{m^2}{r^2}B_m(r)
+	\right) sin (m\theta)
+\end{align*}
+eguagliando i vari termini per la serie
+\[
+	A_m'' + \frac{1}{r} A_m'-\frac{m^2}{r^2} A_m= a_m \;\;\;m=0,1,2,\ldots
+\]
+\[
+	B_m'' + \frac{1}{r} B_m'-\frac{m^2}{r^2} B_m= b_m \;\;\;m=1,2,\ldots
+\]
+cio\`e l'equazione di Eulero
+\[
+	r^2 B_m'' + rB_m' - m^2B_m= \underbracket{r^2b_m}_{\text{Noto}}
+\]
+Sostituiamo $B_m(r)= y_m(ln \, r)$ quindi
+\[
+	B_m'(r)= y_m'(ln \, r)\frac{1}{r}
+\]
+\[
+	B_m''(r)= y_m''(ln \, r)\frac{1}{r^2}- y_m'(ln \, r)\frac{1}{r^2}
+\]
+poi $t=ln \, r \follows r=e^t$, perci\`o
+\[
+	y_m''(t)- \cancel{y_m'(t)} + \cancel{y_m'(t)} - m^2 y_m(t)= e^{2t}b_m(e^t)
+\]
+Presa l'omogenea associata
+\[
+	y_m''(t) - m^2 y_m(t)=0
+\]
+\[
+	\lambda^2 - m^2 =0 \follows \lambda= \pm m
+\]
+quindi due basi indipendenti dell'omogenea sono $e^{mt}$, $e^{-mt}$.\\
+Si cerca poi una soluzione particolare dell'equazione completa $\bar{y}_m(t)$
+tale che
+\[
+	y_m(t)= C_{1m}e^{mt} + C_{2m}e^{-mt} + \bar{y}_m(t)
+\]
+trovata ad esempio con la variazione delle costanti\footnote{
+Vedi anche \url{http://wikipedia.org/wiki/Variation_of_parameters}}
+o, se il secondo membro lo permette, per similitudine.
+\[
+	B_m (r)= y_m(ln \, r) = C_{1m}r^m + \frac{C_{2m}}{r^m} + \bar{y}_m(ln \, r)
+\]
+Si applicano ora le condizioni;\\
+quando $r=R \follows B_m (R)=0$
+\[
+	C_{1m}R^m + \frac{C_{2m}}{R^m} + \bar{y}_m(ln \, R)=0
+\]
+poi deve essere definito $B_m(r)$, cio\`e deve convergere anche in $r \to 0$
+\[
+	\lim_{r \to 0} \left(
+	\frac{C_{2m}}{r^m} + \bar{y}_m(ln \, r) \right) \;\;\; \text{FINITO}
+\]
+Attraverso di esse si determinano quindi i $C_{1m}$ e $C_{2m}$.
+\subsubsection{Esempio}
+\[
+	\left\{
+	\begin{array}{ll}
+		\Delta u= 2xy	& \text{per } x^2 +y^2 <1 \\
+		u=0		& \text{per } x^2+y^2=1
+	\end{array}
+	\right.
+\]
+Dato $x= rcos \theta$ e $y= rsin\theta$
+\[
+	2xy= 2r^2 cos \theta sin \theta= r^2 sin(2\theta)
+\]
+Si presenta gi\`a come serie di Fourier con un unico termine
+\[
+	b_2(r)=r^2= b(r)
+\]
+perci\`o
+\[
+	u= B(r) sin(2\theta)
+\]
+\[
+	\Delta = \partial_r^2 +\frac{1}{r}\partial_r + \frac{1}{r^2}\partial_{\theta}^2
+\]
+\[
+	\Delta u= \left(
+	B''(r) + \frac{1}{r} B' (r) - \frac{4}{r^2} B(r)
+	\right) sin (2 \theta)
+\]
+\[
+	B''(r) +\frac{1}{r}B'(r) - \frac{4}{r^2}B(r)= r^2
+\]
+\[
+	r^2 B''(r) +rB'(r) - 4B(r)= r^4
+\]
+\[
+	B(r)= y(lm \, r)
+\]
+\[
+	B'(r)= \frac{1}{r}y'(lm \, r)
+\]
+\[
+	B''(r)= \frac{1}{r^2}\left( y''(lm \, r) - y'(lm \, r) \right)
+\]
+\[
+	y'' - \cancel{y'} + \cancel{y'} - 4y= e^{4t}
+\]
+\[
+	\lambda^2=4 \follows \lambda=\pm 2
+\]
+\[
+	y_1(t)= e^{2t} \;\;\; y_2(t)= e^{-2t}
+\]
+Ora cerco la soluzione particolare per similitudine (cio\`e usando
+generalmente $\bar{y}= c t^n f$, con $n$ in modo che non si annulli 
+l'equazione differenziale).
+\[
+	\bar{y}= c e^{4t}
+\]
+e messa nell'equazione
+\[
+	16ce^{4t} - 4ce^{4t}= e^{4t}
+\]
+che porta a $c= 1/12$\\
+La soluzione completa \`e
+\[
+	y(t)= C_1e^{2t} + C_2e^{-2t} + \frac{1}{12}e^{4t}
+\]
+ritorniamo ora alla soluzione in $r$
+\[
+	B(r)= C_1 r^2 + \frac{C_2}{r^2} + \frac{1}{12}r^4
+\]
+Per $r \to 0$, si ha la convergenza se $C_2=0$\\
+Con $r=1$
+\[
+	B(1)=0 \follows C_1+ \frac{1}{12}=0 \follows C_1= - \frac{1}{12}
+\]
+\[
+	u= \frac{1}{12}(r^4 - r^2)sin(2 \theta)= \frac{1}{12}(r^2 -1)r^2 sin(2\theta) =
+	\frac{1}{6}(x^2 + y^2 -1)xy
+\]
+Immediatamente si vede che, con $x^2 + y^2 =1$, $u=0$.
+Inoltre $\Delta u= 2xy$.
+
+%\subsection{La soluzione fondamentale}
+% Dato che non \`e stata svolta a lezione, l'ho tralasciata
