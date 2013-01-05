@@ -14,9 +14,11 @@ Il primo passo nella derivazione dell'equazione del calore consiste nell'applica
 isolata una porzione $[x_0, x_0+h]$ della barra, il tasso di variazione dell'energia interna eguaglia il flusso agli estremi;
 nel caso di sorgente, il tasso di variazione del calore erogato sar\`a sommato al flusso agli estremi.
 \[
-	\underbrace{\frac{d}{dt}\int_{x_0}^{x_0+h} e(t,x)\rho dx}_\text{Variazione dell'energia rispetto al tempo}
+	\underbrace{\frac{d}{dt}\int_{x_0}^{x_0+h} e(t,x)\rho
+dx}_\text{Variazione dell'energia rispetto al tempo}
 	= \overbrace{q(t,x_0)-q(t,x_0 +h)}^\text{Flusso entrante}
-	+\underbrace{\int_{x_0}^{x_0+h} r(t,x) \rho dx}_\text{Flusso della sorgente}
+	+\underbrace{\int_{x_0}^{x_0+h} r(t,x) \rho dx}_\text{Flusso della
+sorgente}
 \]
 Per il Teorema Fondamentale del Calcolo Integrale
 \[
@@ -24,25 +26,31 @@ Per il Teorema Fondamentale del Calcolo Integrale
 \]
 dove $q_x$ indica $\frac{dq}{dx}$.
 
-Considerando che l'espressione 
+Considerando che l'espressione
 \[
 	\frac{d}{dt}\int_{x_0}^{x_0+h} e(t,x)\rho dx
 	= -\int_{x_0}^{x_0+h} q_x(t,x)dx
 	+\int_{x_0}^{x_0+h} r(t,x) \rho dx
 \]
-deve essere valida per $x_0$ e $x_0+h$ e che, data la continuit\`a dell'energia \`e possibile portare 
-la derivata all'interno del segno di integrale, si ottiene la Legge di Bilancio in forma locale
+deve essere valida per $x_0$ e $x_0+h$ e che, data la continuit\`a dell'energia
+\`e possibile portare
+la derivata all'interno del segno di integrale, si ottiene la Legge di Bilancio
+in forma locale
 \[
-	\frac{\partial}{\partial t} e(t,x)\rho= -\frac{\partial}{\partial x}q(t,x)+\rho r(t,x)
+	\frac{\partial}{\partial t} e(t,x)\rho= -\frac{\partial}{\partial
+x}q(t,x)+\rho r(t,x)
 \]
 
-\`E ora necessario applicare le leggi costitutive, che risultano essere delle leggi sperimentali.\\
-La prima, che prende il nome di \textit{Legge di Fourier}, indica che il flusso di calore ($q$) \`e direttamente proporzionale
+\`E ora necessario applicare le leggi costitutive, che risultano essere delle
+leggi sperimentali.\\
+La prima, che prende il nome di \textit{Legge di Fourier}, indica che il flusso
+di calore ($q$) \`e direttamente proporzionale
 alla derivata spaziale della temperatura secondo la legge
 \[
 	q= -ku_x
 \]
-con $u=u(t,x)$ e $k>0$. Il segno negativo indica che si ha il flusso positivo passando dalla zona pi\`u calda a quella pi\`u fredda.
+con $u=u(t,x)$ e $k>0$. Il segno negativo indica che si ha il flusso positivo
+passando dalla zona pi\`u calda a quella pi\`u fredda.
 \[
 	[k]= \frac{[cal]}{[tempo]}\frac{[lunghezza]}{[grado]}
 \]
@@ -56,7 +64,8 @@ dove $c_l$ indica il calore specifico ed \`e $>0$
 \]
 Operando la sostituzione si ottiene
 \[
-	\rho c_l \frac{\partial}{\partial t} u= k \frac{\partial^2}{\partial x^2}u + \rho r
+	\rho c_l \frac{\partial}{\partial t} u= k \frac{\partial^2}{\partial
+x^2}u + \rho r
 \]
 che riordinata
 \[
@@ -64,17 +73,21 @@ che riordinata
 \]
 dove $D=k/c_l\rho$ e $f=r/c_l$.
 \[
-	[D]=\frac{\cancel{[cal]}[lunghezza]}{[tempo]\cancel{[grado]}}\frac{\cancel{[massa]}\cancel{[grado]}}{\cancel{[cal]}}
+	[D]=\frac{\cancel{[cal]}[lunghezza]}{[tempo]\cancel{[grado]}}\frac{
+\cancel{[massa]}\cancel{[grado]}}{\cancel{[cal]}}
 	\frac{[lunghezza]}{\cancel{[massa]}}=\frac{[lunghezza]^2}{[tempo]}
 \]
 
-L'equazione caratteristica risulta quindi essere, considerata l'equazione differenziale omogenea e sostituendo due variabili algebriche alle due variabili derivate
+L'equazione caratteristica risulta quindi essere, considerata l'equazione
+differenziale omogenea e sostituendo due variabili algebriche alle due variabili
+derivate
 \[
 	u_t= Du_{xx} \;\;\; \Rightarrow \;\;\; T=DX^2
 \]
 Si noti che \`e l'equazione di una parabola.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Problemi ``Ben Posti''}
 Si considerino i cosiddetti ``problemi ben posti'', essi saranno del tipo
 \[
@@ -82,13 +95,17 @@ Si considerino i cosiddetti ``problemi ben posti'', essi saranno del tipo
 	\begin{array}{ll}
 		u_t=Du_{xx} & x\in\mathbb{R}, \; 0<t<T \\
 		u(0,x)=g(x) & \text{Temperatura Iniziale}\\
-		u(t,0)=\alpha(t) \; , \; u(t,L)=\beta(t) & \text{Condizioni di Dirichlet agli estremi}\\
-		u_x(t,0)=\alpha(t) \; , \; u_x(t,L)=\beta(t) & \text{Condizioni di Neumann agli estremi}
+		u(t,0)=\alpha(t) \; , \; u(t,L)=\beta(t) & \text{Condizioni di
+Dirichlet agli estremi}\\
+		u_x(t,0)=\alpha(t) \; , \; u_x(t,L)=\beta(t) & \text{Condizioni
+di Neumann agli estremi}
 	\end{array}
 	\right.
 \]
-Le condizioni di Dirichlet corrispondono a fissare la temperatura sui capi della sbarra, mentre con Neumann si fissa
-il flusso (condizioni di Neumann nulle significano che la barra \`e isolata agli estremi). Non sono state poste condizioni per $t=T$
+Le condizioni di Dirichlet corrispondono a fissare la temperatura sui capi della
+sbarra, mentre con Neumann si fissa
+il flusso (condizioni di Neumann nulle significano che la barra \`e isolata agli
+estremi). Non sono state poste condizioni per $t=T$
 per la causalit\`a del sistema in esame.
 
 \section{Unicit\`a e dipendenza continua dai dati}
@@ -100,17 +117,19 @@ e la si deriva rispetto al tempo
 \[
 	E'(t)= \frac{1}{2}\int_0^L 2u(t,x)u_t(t,x)dx
 \]
-Nel passaggio precedente ci si \`e posti nella condizione in cui la derivata della somma equivale alla somma delle derivate.\\
+Nel passaggio precedente ci si \`e posti nella condizione in cui la derivata
+della somma equivale alla somma delle derivate.\\
 Considerando ora $u_t=Du_{xx}$ si ottiene
 \[
 	E'(t)= D\int_0^L u(t,x)u_{xx}(t,x)dx
 \]
 Ora, utilizzando l'integrazione per parti
 \[
-	D\left[u(t,x)u_x(t,x)\right]_0^L - D\int_0^L 
+	D\left[u(t,x)u_x(t,x)\right]_0^L - D\int_0^L
 	\underbrace{u_x(t,x)u_x(t,x)}_{u_x^2(t,x)}dx
 \]
-Nel caso di condizioni agli estremi nulle si ha $u(t,0)=u(t,L)=0$, perci\`o il termine $D\left[u(t,x)u_x(t,x)\right]_0^L=0$ e quindi
+Nel caso di condizioni agli estremi nulle si ha $u(t,0)=u(t,L)=0$, perci\`o il
+termine $D\left[u(t,x)u_x(t,x)\right]_0^L=0$ e quindi
 \[
 	E'(t)= - D \int_0^L u_x^2(t,x) dx \leq 0
 \]
@@ -121,12 +140,14 @@ La derivata negativa indica che $E(t)\leq E(0)$, segue che
 Perci\`o, considerato il sistema privo di ingressi e quindi l'equazione
 omogenea, $E(t)$ non aumenta. \\
 Si consideri nuovamente l'equazione $u_t=Du_{xx}$; essa \`e lineare, perci\`o
-se $u_1$ e $u_2$ sono soluzioni e $C_1,\; C_2$ costanti, anche $u=C_1u_1+C_2u_2$ \`e soluzione.\\
+se $u_1$ e $u_2$ sono soluzioni e $C_1,\; C_2$ costanti, anche $u=C_1u_1+C_2u_2$
+\`e soluzione.\\
 Se
 \[
 	\underbracket{
 		\begin{array}{l}
-			u_1 \text{ \`e soluzione con temperatura iniziale } g_1 \\
+			u_1 \text{ \`e soluzione con temperatura iniziale } g_1
+\\
 			u_2 \text{ \`e soluzione con temperatura iniziale } g_2
 		\end{array}
 		}_{\Downarrow}
@@ -143,7 +164,8 @@ e applicato alla disuguaglianza precedente
 che garantisce:\\
 {\bf Unicit\`a}: Se $g_1=g_2$ si ottiene
 \[
-	\int_0^L \underbrace{\left(u_1(t,x)-u_2(t,x)\right)^2}_\text{sempre positivo o nullo} dx
+	\int_0^L \underbrace{\left(u_1(t,x)-u_2(t,x)\right)^2}_\text{sempre
+positivo o nullo} dx
 	\leq 0
 \]
 essendo la somma di quadrati sempre positiva
@@ -213,7 +235,7 @@ con $K$ una costante. Perci\`o si posso spezzare in due equazioni
 	\;\;\;
 	v'(t)=Kv(t)
 \]
-Procediamo con il risolvere l'equazione differenziale di secondo grado; 
+Procediamo con il risolvere l'equazione differenziale di secondo grado;
 infatti essa imporr\`a dei vincoli su $K$.
 \[
 	D\lambda^2-K=0
@@ -240,7 +262,7 @@ applicando le condizioni al contorno ($w(0)=0 \; w(L)=0$)
 	\left\{
 	\begin{array}{l}
 		C_1+C_2=0 \\
-		\displaystyle{C_1e^{L\sqrt{\frac{K}{D}}} 
+		\displaystyle{C_1e^{L\sqrt{\frac{K}{D}}}
 			+ C_2e^{-L\sqrt{\frac{K}{D}}}}
 	\end{array}
 	\right.
@@ -284,7 +306,8 @@ Perci\`o l'insieme delle soluzioni con $K>0$ verr\`a scartato.
 Anche la soluzione con $K=0$ sar\`a scartata.
 
 {\bf Se $K<0$}:\\
-Poniamo $-\omega^2 = K/D$ $\Rightarrow$ $\lambda^2 = - \omega^2$ e $\lambda=\pm i\omega$
+Poniamo $-\omega^2 = K/D$ $\Rightarrow$ $\lambda^2 = - \omega^2$ e $\lambda=\pm
+i\omega$
 \[
 	\left\{
 	\begin{array}{l}
@@ -317,7 +340,8 @@ Ora, considerata la soluzione n-esima di $w(x)$
 \[
 	w_n(x)=sin\left(\frac{n\pi}{L}x \right)
 \]
-dove la costante $C_2$ sar\`a considerata successivamente, al momento della scomposizione con Fourier.\\
+dove la costante $C_2$ sar\`a considerata successivamente, al momento della
+scomposizione con Fourier.\\
 Considerato ora
 \[
 	K_n=-\omega_n^2 D= -\left(\frac{n\pi}{L}\right)^2D
@@ -353,7 +377,8 @@ Bisogna quindi trovare un modo per poter esprimere la funzione $g(x)$
 come serie di sinusoidi.\\
 Verifichiamo prima di tutto la convergenza.\\
 Si prenda una sequenza limitata dei coefficienti $b_n$, cio\`e che
-$|b_n|\leq C$ per qualsiasi $n$, data $C$ una costante. Allora se $t \geq t_0 > 0$
+$|b_n|\leq C$ per qualsiasi $n$, data $C$ una costante. Allora se $t \geq t_0 >
+0$
 e $0\leq x \leq L$
 \[
 	\sum_{n=1}^{\infty}\left| b_n e^{-\frac{n^2\pi^2}{L^2} Dt}
@@ -369,19 +394,22 @@ derivare all'interno della serie, anch'essa \`e soluzione. Questo pu\`o essere
 effettuato nel caso in cui la somma della serie converga.
 \[
 	\sum_{n=1}^{\infty}\left| \frac{\partial}{\partial x} u_n \right|=
-	\sum_{n=1}^{\infty}\left| b_n \frac{n\pi}{L} 
+	\sum_{n=1}^{\infty}\left| b_n \frac{n\pi}{L}
 	e^{-\frac{n^2\pi^2}{L^2} Dt}
 	sin\left(\frac{n\pi}{L}x \right)\right|
 	\leq
 	C \sum_{n=1}^{\infty} \frac{n\pi}{L} e^{-\frac{n^2\pi^2}{L^2} Dt}
 \]
-In questo caso $e^{-n^2}$ tende a zero molto rapidamente, rendendo la serie convergente. Successivamente anche la derivata seconda converge 
+In questo caso $e^{-n^2}$ tende a zero molto rapidamente, rendendo la serie
+convergente. Successivamente anche la derivata seconda converge
 (in realt\`a \`e una funzione liscia, cio\`e $u(t,x)\in C^\infty$,
 per $t>0$ e $0\leq x \leq L$).
-Qualunque sia $g(x)$, passato l'istante $t=0$, la funzione diventa immediatamente
+Qualunque sia $g(x)$, passato l'istante $t=0$, la funzione diventa
+immediatamente
 continua. La diffusione ha quindi un effetto regolarizzante.\\
 \`E quindi possibile derivare all'interno della sommatoria.\\
-Si tratta ora di costruire il prolungamento dispari con periodo $2L$ (fig. \ref{prolper_disp})
+Si tratta ora di costruire il prolungamento dispari con periodo $2L$ (fig.
+\ref{prolper_disp})
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{gx.pdf}
@@ -395,8 +423,9 @@ Si tratta ora di costruire il prolungamento dispari con periodo $2L$ (fig. \ref{
 	\label{prolper_disp}
 \end{figure}
 \noindent
-Si \`e operato con un prolungamento dispari in modo da ottenere una serie composta
-da sole sinusoidi. Si noti che nella parte di interesse, cio\`e tra $0$ e $L$, 
+Si \`e operato con un prolungamento dispari in modo da ottenere una serie
+composta
+da sole sinusoidi. Si noti che nella parte di interesse, cio\`e tra $0$ e $L$,
 rappresenta effettivamente la funzione $g(x)$.
 \[
 	b_n= \frac{2}{L}\int_0^L g(x)sin \left(\frac{n\pi}{l} x\right) dx
@@ -405,7 +434,7 @@ rappresenta effettivamente la funzione $g(x)$.
 \]
 Ricavati i $b_n$ \`e possibile ottenere la funzione $u(x,t)$.
 
-Il coefficiente di scala \`e dato da $D/L^2$; questo consente di 
+Il coefficiente di scala \`e dato da $D/L^2$; questo consente di
 scalare le dimensioni variando opportunamente il materiale, rendendo possibile
 l'uso di modellini equivalenti (scalati).
 \[
@@ -477,7 +506,7 @@ con $u(0,x)= v(0,x) + u^S(x) \;\;\; \Rightarrow \;\;\; v(0,x)=g(x)- u^S(x)$
 		v(t,L)=0
 	\end{array}
 	\right.
-\] 
+\]
 \subsection{Esercizio: Barra isolata agli estremi}
 \[
 	\left\{
@@ -489,10 +518,10 @@ con $u(0,x)= v(0,x) + u^S(x) \;\;\; \Rightarrow \;\;\; v(0,x)=g(x)- u^S(x)$
 	\end{array}
 	\right.
 \]
-Si ottiene che la soluzione \`e composta da una serie di soli coseni a 
+Si ottiene che la soluzione \`e composta da una serie di soli coseni a
 valor medio non nullo
 \[
-	u(t,x)= \frac{a_0}{2}+ \sum_{n=1}^\infty a_n 
+	u(t,x)= \frac{a_0}{2}+ \sum_{n=1}^\infty a_n
 	e^{-\frac{n^2\pi^2}{L^2} Dt}
 	cos \left(\frac{n\pi}{L}x \right)
 \]
@@ -515,9 +544,11 @@ valor medio non nullo
 	\end{array}
 	\right.
 \]
-Il comportamento agli estremi ($-\infty < x < \infty$) \`e inglobato nella definizione dello spazio al quale deve appartenere la soluzione.
+Il comportamento agli estremi ($-\infty < x < \infty$) \`e inglobato nella
+definizione dello spazio al quale deve appartenere la soluzione.
 \subsection{Soluzione fondamentale}
-La soluzione fondamentale descrive la diffusione per $t>0$ di una massa unitaria concentrata in $x=0$ al tempo $t=0$. Questo significa
+La soluzione fondamentale descrive la diffusione per $t>0$ di una massa unitaria
+concentrata in $x=0$ al tempo $t=0$. Questo significa
 \[
 	\left\{
 	\begin{array}{l}
@@ -526,11 +557,12 @@ La soluzione fondamentale descrive la diffusione per $t>0$ di una massa unitaria
 	\end{array}
 	\right.
 \]
-si utilizza la trasformata di Fourier rispetto ad $x$ di $u(x,t)$ definita da 
+si utilizza la trasformata di Fourier rispetto ad $x$ di $u(x,t)$ definita da
 \[
 	v(t,\lambda)=\int_{-\infty}^{+\infty} e^{-i\lambda x} u(t,x) dx
 \]
-nel caso che $u(t,x)$ sia sommabile da $- \infty$ a $+ \infty$ in $dx$ per $t>0$. Ricordiamo che la trasformata si estende a distribuzioni di Schwartz
+nel caso che $u(t,x)$ sia sommabile da $- \infty$ a $+ \infty$ in $dx$ per
+$t>0$. Ricordiamo che la trasformata si estende a distribuzioni di Schwartz
 di cui anche $\delta (x)$ fa parte, con trasformata pari a $1$.
 Allora \`e equivalente a
 \[
@@ -561,7 +593,7 @@ Si tratta di una trasformata notevole
 	u(t,x)= \frac{1}{\sqrt{4 \pi D t}}
 	e^{-\frac{x^2}{4Dt}}
 \]
-Questa \`e l'unica soluzione di 
+Questa \`e l'unica soluzione di
 \[
 	\left\{
 	\begin{array}{l}
@@ -579,7 +611,7 @@ tale che $u(t, \bullet) \in \mathcal{S'}, \;\; t \geq 0$.
 \end{figure}
 Il fatto che,
 \[
-	\intR u(t,x) dx = 
+	\intR u(t,x) dx =
 	\frac{1}{\sqrt{4 \pi D t}}
 	\intR e^{-\frac{x^2}{4Dt}} dx
 \]
@@ -591,10 +623,12 @@ operando le sostituzioni,
 	\frac{1}{\sqrt{\pi}}\intR e^{-y^2} dy= \frac{1}{\sqrt{\pi}}\sqrt{\pi}=1
 \]
 esprime la conservazione della massa totale ad ogni tempo $t>0$.
-La massa unitaria inizialmente centrata nel punto $x=0$ si diffonde con densit\`a gaussiana di scarto quadratico $4Dt$ al tempo $t$ (fig. \ref{gauss_bell}).
+La massa unitaria inizialmente centrata nel punto $x=0$ si diffonde con
+densit\`a gaussiana di scarto quadratico $4Dt$ al tempo $t$ (fig.
+\ref{gauss_bell}).
 \subsection{Trasformazioni invarianti}
 \subsubsection{Traslazione temporale}
-Consideriamo una soluzione $u(t,x)$ di 
+Consideriamo una soluzione $u(t,x)$ di
 \[
 	u_t= Du_{xx} \;\;\; 0< t< T, \;\;\; - \infty <x < +\infty
 \]
@@ -602,7 +636,7 @@ La funzione
 \[
 	v(t,x)= u(T-t,x)
 \]
-\`e tale che 
+\`e tale che
 \[
 	v_t(t,x)= -u_t(T-t, x)
 \]
@@ -613,16 +647,19 @@ quindi risolve l'equazione
 \[
 	v_t= -Dv_{xx}
 \]
-La non invarianza dell'equazione rispetto alla trasformazione $t \Rightarrow T-t$
+La non invarianza dell'equazione rispetto alla trasformazione $t \Rightarrow
+T-t$
 riflette la non reversibilit\`a temporale dei fenomeni di diffusione.
-Il problema di Cauchy globale \`e ben posto con condizione iniziale al tempo 
-$t=0$ e nessuna condizione pu\`o essere posta al tempo finale $t=T$, in quanto il comportamento nel futuro \`e completamente determinato dalla storia passata
+Il problema di Cauchy globale \`e ben posto con condizione iniziale al tempo
+$t=0$ e nessuna condizione pu\`o essere posta al tempo finale $t=T$, in quanto
+il comportamento nel futuro \`e completamente determinato dalla storia passata
 (principio di causalit\`a).
-Il problema 
+Il problema
 \[
 	v_t= -Dv_{xx}
 \]
-\`e ben posto con la condizione al tempo $t=T$ e nessuna condizione pu\`o essere posta al tempo $t=0$
+\`e ben posto con la condizione al tempo $t=T$ e nessuna condizione pu\`o essere
+posta al tempo $t=0$
 \subsubsection{Invarianti di scala}
 La trasformazione
 \[
@@ -652,7 +689,7 @@ Vediamo sotto quali condizioni la funzione
 \[
 	acu_t= Db^2 c u_{xx} \follows a=b^2
 \]
-Per ottenere il coefficiente $c$, prendiamo il esame la conservazione della 
+Per ottenere il coefficiente $c$, prendiamo il esame la conservazione della
 massa
 \[
 	\intR v(t,x) dx = \intR u(t,x) dx = m= 1
@@ -691,12 +728,15 @@ si chiamano dilatazioni paraboliche, in quanto lasciano invariati i rapporti
 	\frac{x^2}{t}, \;\;\; \frac{x}{\sqrt{t}}
 \]
 \section{Soluzione fondamentale senza l'uso della trasformata di Fourier}
-Prendo formalmente $a= 1/t$ nelle dilatazioni paraboliche e cerchiamo una soluzione 
+Prendo formalmente $a= 1/t$ nelle dilatazioni paraboliche e cerchiamo una
+soluzione
 \[
 	u^*(t,x)= \frac{1}{\sqrt{t}}u \left( 1, \frac{x}{\sqrt{t}} \right)=
 	\frac{1}{\sqrt{t}}U \left( r \right)
 \]
-a variabili separate, come prodotto della funzione dl solo tempo $\frac{1}{\sqrt{t}}$ e della funzione $U(r)$, da determinarsi, della sola variabile
+a variabili separate, come prodotto della funzione dl solo tempo
+$\frac{1}{\sqrt{t}}$ e della funzione $U(r)$, da determinarsi, della sola
+variabile
 $r=\frac{x}{\sqrt{t}}$
 \[
 	u^*_t= -\frac{1}{2}t^{-\frac{3}{2}} U(r)
@@ -723,7 +763,8 @@ ottengo
 	2DU''(r)+ rU'(r)+ U(r)= 0
 \]
 che risulta essere una equazione differenziale a coefficienti non costanti.
-I polinomi di grado finito non possono risolvere l'equazione, ma serve una serie.
+I polinomi di grado finito non possono risolvere l'equazione, ma serve una
+serie.
 Cerchiamo le soluzioni come serie di potenze
 \[
 	U(r)= \sum_{n=0}^{\infty}a_n r^n
@@ -746,7 +787,7 @@ quindi richiamando l'indice $n$
 \[
 	U''(r)=\sum_{n=2}^{\infty} (n+2)(n+1)a_(n+2) r^{n}
 \]
-Sostituendo nell'equazione ed eguagliando a zero il coefficiente di $r^n$ per 
+Sostituendo nell'equazione ed eguagliando a zero il coefficiente di $r^n$ per
 ogni $k \geq $, si ha
 \[
 	2D(n+2)(n+1)a_{n+2}+ na_n+ a_n = 0
@@ -762,10 +803,12 @@ La formula ricorsiva
 fornisce tutti i coefficienti di indice pari, assegnato $a_0$, e tutti quelli
 dispari assegnato $a_1$.
 Del resto sappiamo che l'integrale generale dipende da due costanti arbitrarie.
-Se siamo alla ricerca di una soluzione che descriva la diffusione di una massa inizialmente concentrata in $x=0$, \`e naturale assumere la densit\`a abbia
+Se siamo alla ricerca di una soluzione che descriva la diffusione di una massa
+inizialmente concentrata in $x=0$, \`e naturale assumere la densit\`a abbia
 simmetria pari per $t>0$, perci\`o $a_1=0$ e quindi tutti gli $a$ con indice
 dispari sono nulli.
-Stabiliti $a_0$ e $a_1$ si \`e stabilita tutta la serie, con $n\rightarrow \infty$
+Stabiliti $a_0$ e $a_1$ si \`e stabilita tutta la serie, con $n\rightarrow
+\infty$
 Per quanto riguarda i coefficienti pari
 \begin{align*}
 	& a_0=\ldots \\
@@ -783,13 +826,13 @@ Per quanto riguarda i coefficienti pari
 Questa comprende anche $a_0$, infatti $a_0= 1 \cdot 1/1 \cdot a_0= a_0$\\
 Riprendendo $U(r)$
 \[
-	U(r)= a_0 \sum_{m=0}^{\infty} \frac{1}{m!} 
+	U(r)= a_0 \sum_{m=0}^{\infty} \frac{1}{m!}
 	\left( -\frac{1}{4D} \right)^m r^{2m}
-	= a_0 \sum_{m=0}^{\infty} \frac{1}{m!} 
+	= a_0 \sum_{m=0}^{\infty} \frac{1}{m!}
 	\left( -\frac{r^2}{4D} \right)^m
 	= a_0 e^{- \left( r^2/4D \right)}
 \]
-dove si \`e usata la definizione attraverso la serie di potenze 
+dove si \`e usata la definizione attraverso la serie di potenze
 dell'esponenziale
 \[
 	\sum_{m=0}^{\infty} \frac{x^m}{m!}= e^x
@@ -850,10 +893,11 @@ che perde l'informazione essenziale
 \[
 	\intR \Gamma_D(t,x) dx= 1
 \]
-Infatti l'integrale della funzione nulla ovunque tranne che per $x=0$, dove vale $\infty$, si riduce all'area della semiretta $x=0$, $y\geq 0$, che vale
+Infatti l'integrale della funzione nulla ovunque tranne che per $x=0$, dove vale
+$\infty$, si riduce all'area della semiretta $x=0$, $y\geq 0$, che vale
 0. Il limite puntuale non \`e dunque il modello matematico corretto.
 Se invece prendiamo delle funzioni test $\phi (x)$ che siano regolari
-($C^\infty$) e nulle fuori da un intervallo limitato, $\Gamma_D(t,x)$, 
+($C^\infty$) e nulle fuori da un intervallo limitato, $\Gamma_D(t,x)$,
 come ogni altra funzione localmente sommabile, \`e identificabile attraverso
 i campionamenti
 \[
@@ -885,7 +929,7 @@ con la sostituzione $x= y \sqrt{4Dt}$
 	\phi(0)\frac{1}{\sqrt{\pi}}
 	\intR e^{-y^2}= \phi(0)
 \]
-Il modello matematico di una massa unitaria centrata in $x=0$ \`e dunque 
+Il modello matematico di una massa unitaria centrata in $x=0$ \`e dunque
 il funzionale
 \[
 	\phi \longmapsto \phi(0)
@@ -921,7 +965,8 @@ Perci\`o
 Se ora $u$ \`e una distribuzione qualunque, ci\`o porta a definire la
 distribuzione $u'$ proprio attraverso
 \[
-	\left< u', \phi \right>\substack{\text{DEF} \\ =} - \left< u, \phi ' \right>
+	\left< u', \phi \right>\substack{\text{DEF} \\ =} - \left< u, \phi '
+\right>
 \]
 Secondo questa definizione, $\delta$ \`e la derivata del gradino unitario $H$
 \begin{figure}[H]
@@ -952,30 +997,33 @@ Torniamo a considerare la soluzione fondamentale
 	e^{-\left( x^2/4Dt \right)}
 \]
 che descrive l'evoluzione per $t>0$ della densit\`a lineare di una massa totale
-$m=1$ inizialmente concentrata in $x=0$ al tempo $t=0$. 
-Se la massa \`e realizzata attraverso un grande numero $N$ di particelle poste in $x=0$ per $t=0$, l'integrale di densit\`a normale (gaussiana)
+$m=1$ inizialmente concentrata in $x=0$ al tempo $t=0$.
+Se la massa \`e realizzata attraverso un grande numero $N$ di particelle poste
+in $x=0$ per $t=0$, l'integrale di densit\`a normale (gaussiana)
 \[
-	\frac{1}{\sqrt{4 \pi D t}}\int_a^b 
+	\frac{1}{\sqrt{4 \pi D t}}\int_a^b
 	e^{-\left( x^2/4Dt \right)} dx
 \]
 descrive la probabilit\`a che una di queste particelle si trovi al tempo $t$
 nell'intervallo $[a,b]$, quindi la percentuale di particelle presenti in $[a,b]$
 al tempo $t$.
 
-Il dato iniziale 
+Il dato iniziale
 \[
 	\Gamma_D(0,x)= \delta
 \]
 \`e altamente singolare: non \`e nemmeno descrivibile attraverso una funzione
 per singolare che la si voglia pensare.
-Eppure per ogni $t>0$ la soluzione \`e estremamente regolare: ha derivate (usuali)
+Eppure per ogni $t>0$ la soluzione \`e estremamente regolare: ha derivate
+(usuali)
 di ogni ordine e va rapidamente a $0$ per $x \to \pm \infty$ assieme a tutte
 le proprie derivate.
 Il processo di diffusione \`e quindi {\bf regolarizzante}.
 Infine, istantaneamente ad un qualunque $t>0$ si ha $\Gamma_D(0,x)>0$ per ogni
 $x$. Ci\`o significa che la massa si diffonde istantaneamente dal singolo punto
 $x=0$ e tutto l'asse reale con {\bf velocit\`a di propagazione infinita}.
-Questo a volte \`e un limite nell'applicazione del modello anche se $\Gamma_D(0,x)$
+Questo a volte \`e un limite nell'applicazione del modello anche se
+$\Gamma_D(0,x)$
 \`e quasi nulla al di fuori dell'intervallo $[-2D, 2D]$ per $t<<1$ e
 l'integrale in $dx$ su tale intervallo vale l'intera massa $m=1$ per gli
 stessi tempi ``piccoli''.
@@ -987,14 +1035,14 @@ Risolviamo il sistema
 		u_t= Du_{xx}\\
 		u(0,x)= g(x)
 	\end{array}
-	\right. 
+	\right.
 	\substack{\displaystyle{\mathscr{F}} \\ \follows}
 	\left\{
 	\begin{array}{l}
 		v_t= -D\lambda v\\
 		v(0,\lambda)= \hat{g}(\lambda)
 	\end{array}
-	\right. 
+	\right.
 \]
 \[
 	v(t, \lambda)= c(\lambda)e^{-D\lambda^2t}
@@ -1016,7 +1064,7 @@ e antitrasformando ($\mathscr{F}^{-1}$)
 \[
 	u(t,x)= g(x) \circledast \Gamma_D(t,x)
 \]
-Dato che 
+Dato che
 \[
 	\Gamma_D(t,x)=
 	\frac{1}{\sqrt{4D\pi t}}
@@ -1025,7 +1073,7 @@ Dato che
 risultava essere la soluzione fondamentale, cio\`e con $g(x)=\delta(x)$,
 la soluzione generica \`e composta dalla somma di tutti gli effetti elementari
 \[
-	u(t,x)= \frac{1}{\sqrt{4D\pi t}} \intR 
+	u(t,x)= \frac{1}{\sqrt{4D\pi t}} \intR
 	e^{\left( -(x-y)^2 / 4Dt \right)}
 	g(y) dy
 \]
@@ -1059,7 +1107,7 @@ Consideriamo quindi
 \]
 da cui, moltiplicando per il fattore integrante $e^{D\lambda^2 t}$
 \[
-	e^{D\lambda^2 t} v_t + e^{D\lambda^2 t} D \lambda^2 v 
+	e^{D\lambda^2 t} v_t + e^{D\lambda^2 t} D \lambda^2 v
 	=e^{D\lambda^2 t} \hat{f}
 \]
 \[
@@ -1069,7 +1117,7 @@ da cui, moltiplicando per il fattore integrante $e^{D\lambda^2 t}$
 \]
 \[
 	e^{D\lambda^2 t} v
-	= \int e^{D\lambda^2 t} \hat{f}(t, \lambda) dt 
+	= \int e^{D\lambda^2 t} \hat{f}(t, \lambda) dt
 	+\underbracket{C(\lambda)}_{\mathclap{\text{Costanti rispetto a } t}}
 \]
 Dal teorema fondamentale del calcolo integrale
@@ -1085,13 +1133,13 @@ quindi si pu\`o scrivere
 	= e^{D\lambda^2 t} v(t, \lambda) - v(0,\lambda)
 \]
 \[
-	\int_0^t e^{D\lambda^2 \tau} \hat{f}(\tau, \lambda) d\tau 
+	\int_0^t e^{D\lambda^2 \tau} \hat{f}(\tau, \lambda) d\tau
 	+\hat{g}(\lambda)
 	= e^{D\lambda^2 t} v(t, \lambda)
 \]
 \[
-	v(t,\lambda)= e^{-D\lambda^2 t} +\hat{g}(\lambda) 
-	+ \int_0^t e^{-D\lambda^2 (t - \tau)} \hat{f}(\tau, \lambda) d\tau 
+	v(t,\lambda)= e^{-D\lambda^2 t} +\hat{g}(\lambda)
+	+ \int_0^t e^{-D\lambda^2 (t - \tau)} \hat{f}(\tau, \lambda) d\tau
 \]
 Antitrasformando, tenuto conto che
 \[
@@ -1100,7 +1148,7 @@ Antitrasformando, tenuto conto che
 si ottiene
 \[
 	u(t,x)= \underbracket{\Gamma_D(t,x)\circledast g(x)}_{u_1}+
-	\underbracket{\int_0^t \Gamma_D(t-\tau, x) 
+	\underbracket{\int_0^t \Gamma_D(t-\tau, x)
 	\circledast f(\tau, x) d\tau}_{u_2}
 \]
 perci\`o
@@ -1108,10 +1156,10 @@ perci\`o
 	u(t,x)= u_1(t,x)+ u_2(t,x)
 \]
 Analizzando le varie parti della soluzione, si nota che $u_1$ risolve
-il problema omogeneo senza sorgente facendosi carico della situazione 
+il problema omogeneo senza sorgente facendosi carico della situazione
 iniziale; in particolare risolve il il problema
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{l}
 		u_t=Du_{xx} \\
 		u(0,x)= g(x)
@@ -1120,16 +1168,16 @@ iniziale; in particolare risolve il il problema
 \]
 Per quanto riguarda $u_2$, il termine
 \[
-	\Gamma_D(t-\tau, x) 
+	\Gamma_D(t-\tau, x)
 	\circledast f(\tau, x)
 \]
-\`e uguale all'evoluzione al tempo $t$, dopo un tempo trascorso dall'istante 
+\`e uguale all'evoluzione al tempo $t$, dopo un tempo trascorso dall'istante
 $\tau$ all'istante $t$ pari a $t-\tau$, di una densit\`a $f(\tau, x)$ immessa
-sul sistema al tempo $\tau$. Si noti che la convoluzione contrassegnata con 
+sul sistema al tempo $\tau$. Si noti che la convoluzione contrassegnata con
 $\circledast$ \`e rispetto alla variabile spaziale e non al tempo.\\
 La soluzione $u_2$ risolve
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{l}
 		u_t=Du_{xx} +f \\
 		u(0,x)= 0
@@ -1138,11 +1186,11 @@ La soluzione $u_2$ risolve
 \]
 \subsection{\texorpdfstring
 {Esercizio: Dimostrare che $u(0,x) \in L^2$, allora $u(t,x) \in L^2$}
-{Esercizio: Dimostrare che se u(0,x) \`e a quadrato sommabile, 
+{Esercizio: Dimostrare che se u(0,x) \`e a quadrato sommabile,
 allora lo \`e anche u(t,x)}}
 Dato il problema
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{ll}
 		u_t=Du_{xx} & t>0\\
 		u(0,x)= g(x)
@@ -1158,17 +1206,17 @@ Utilizzando il teorema di Parseval
 	= \frac{1}{2\pi} \intR \left| v(t,\lambda) \right|^2 d\lambda
 \]
 Si noti che \`e stato considerato $u$ reale, perci\`o $u^2= |u|^2$.\\
-Si \`e mostrato in precedenza che la soluzione $v(t,\lambda)$ (cio\`e la 
+Si \`e mostrato in precedenza che la soluzione $v(t,\lambda)$ (cio\`e la
 trasformata di $u$) \`e
 \[
 	v(t,\lambda)= e^{-D\lambda^2 t} \hat{g}(\lambda)
 \]
 quindi
 \[
-	\left| v(t,\lambda) \right|^2 = e^{-2D\lambda^2 t} 
+	\left| v(t,\lambda) \right|^2 = e^{-2D\lambda^2 t}
 	\left| \hat{g}(\lambda) \right|^2
 \]
-e immediatamente si osserva che al crescere del tempo $t$ 
+e immediatamente si osserva che al crescere del tempo $t$
 la funzione decresce.\\
 Riprendendo Parseval
 \[
@@ -1186,7 +1234,7 @@ in $t=0$
 \]
 e per qualsiasi $t\geq 0$
 \[
-	\intR \left| u(t,x)\right|^2 dx \leq 
+	\intR \left| u(t,x)\right|^2 dx \leq
 	\intR \left| g(x) \right|^2 dx
 \]
 In conclusione
