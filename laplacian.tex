@@ -7,16 +7,16 @@ mentre in un corpo a tre dimensioni (solido) \`e
 \[
 	u_t=D\left( u_{xx}+u_{yy} +u_{zz} \right) +f
 \]
-L'operatore 
+L'operatore
 \[
 	\Delta= \partial_{x_1x_1}+ \ldots + \partial_{x_n x_n}
 \]
 in ogni dimensione $n$ \`e detto \textit{Laplaciano}. Con questa notazione
-l'equazione di diffusione si scrive 
+l'equazione di diffusione si scrive
 \[
 	u_t= D\Delta u +f
 \]
-Nel caso di sorgenti $f$ non dipendenti dal tempo, \`e ragionevole cercare 
+Nel caso di sorgenti $f$ non dipendenti dal tempo, \`e ragionevole cercare
 soluzioni stazionarie, cio\`e anch'esse indipendenti da $t$.
 Si giunge cos\`i all'\textit{equazione di Poisson}
 \[
@@ -26,7 +26,7 @@ Nel caso omogeneo $f=0$, l'equazione
 \[
 	\Delta u=0
 \]
-si dice \textit{equazione di Laplace} e le soluzioni si dicono 
+si dice \textit{equazione di Laplace} e le soluzioni si dicono
 \textit{funzioni armoniche}.\\
 Anche le soluzioni stazionarie dell'equazione
 \[
@@ -50,7 +50,8 @@ Se esiste una funzione scalare $u$ tale che
 	div F= div \nabla u = div \left( u_x \uvi +u_y \uvj + u_x \uvk \right)
 	=\Delta u
 \]
-L'equazione di Laplace/Poisson \`e quindi fondamentale nello studio dei campi conservativi. Se $E$ \`e un campo elettrostatico in una regione $\Omega$
+L'equazione di Laplace/Poisson \`e quindi fondamentale nello studio dei campi
+conservativi. Se $E$ \`e un campo elettrostatico in una regione $\Omega$
 di spazio, allora si ha
 \[
 	div E= \frac{4 \pi \rho}{\varepsilon}
@@ -66,15 +67,15 @@ il potenziale soddisfa l'equazione di Poisson
 Nel caso $\rho=0$, cariche fuori di $\Omega$, la funzione $u$ \`e armonica.
 In dimensione $n=2$, le funzioni armoniche intervengono anche nello studio
 di funzioni di variabile complessa.
-Se $f= u+iv$ \`e derivabile in senso complesso, vale l'equazione di 
+Se $f= u+iv$ \`e derivabile in senso complesso, vale l'equazione di
 Cauchy- Riemann
 \[
 	\frac{\partial f}{\partial x}= \frac{1}{i} \frac{\partial f}
 	{\partial y}
 \]
-che si scrive anche 
+che si scrive anche
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{l}
 		u_x=v_y \\
 		v_x=- u_y
@@ -92,7 +93,7 @@ La parte reale $u$ e l parte immaginaria $v$ di $f$ sono funzioni
 armoniche.
 Viceversa, se $u$ \`e una funzione armonica, \`e possibile risolvere le
 equazioni di Cauchy-Riemann rispetto a $v$ in ogni parte semplicemente connessa
-del dominio in modo che 
+del dominio in modo che
 \[
 	f= u+ iv
 \]
@@ -129,13 +130,13 @@ che rappresenta la normale esterna a $\gamma$; la normale interna \`e invece
 \]
 Dato un campo vettoriale $F= f_1 \uvi + f_2 \uvj$, gli integrali curvilinei
 \[
-	\int_ {\gamma} F \cdot {\bf T} ds= 
+	\int_ {\gamma} F \cdot {\bf T} ds=
 	\int_a^b \left[ f_1 (x(t), y(t))x'(t)+
 	f_2 (x(t), y(t))y'(t)
 	\right] dt
 \]
 \[
-	\int_ {\gamma} F \cdot {\bf N} ds= 
+	\int_ {\gamma} F \cdot {\bf N} ds=
 	\int_a^b \left[ f_1 (x(t), y(t))y'(t)
 	- f_2 (x(t), y(t))x'(t)
 	\right] dt
@@ -149,17 +150,19 @@ uscente di $F$ da $\Omega$. Si \`e fatto uso dello spostamento infinitesimo
 Le formule di Gauss-Green collegano gli integrali curvilinei su $\gamma$
 ad integrali in $dx dy$ su $\Omega$:
 \[
-	\int_{\Omega}\partial_x f(x,y)dx dy= \int_{\gamma} f \uvj \cdot {\bf T} ds
+	\int_{\Omega}\partial_x f(x,y)dx dy= \int_{\gamma} f \uvj \cdot {\bf T}
+ds
 \]
 \[
-	\int_{\Omega}\partial_y f(x,y)dx dy= - \int_{\gamma} f \uvi \cdot {\bf T} ds
+	\int_{\Omega}\partial_y f(x,y)dx dy= - \int_{\gamma} f \uvi \cdot {\bf
+T} ds
 \]
 Tali formule sono di facile dimostrazione su domini normali. Ad esempio
 preso $\Omega$ come in fig. \ref{nor_dom}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{nor_dom.pdf}
-	\caption{Dominio normale per la dimostrazione delle formule di Green}
+	\caption{Dominio normale per la dimostrazione delle formule di Green.}
 	\label{nor_dom}
 \end{figure}
 \noindent
@@ -179,7 +182,7 @@ si ha
 \]
 Per il tratto di frontiera
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{ll}
 		x=x & x \in [a,b] \\
 		y= \alpha(x)
@@ -203,7 +206,7 @@ perci\`o
 \]
 Per il tratto orientato in senso contrario
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{ll}
 		x=x & x \in [b,a] \\
 		y= \beta(x)
@@ -226,11 +229,11 @@ perci\`o
 	= \int_b^a f(x, \beta(x)) dx
 	= -\int_a^b f(x, \beta(x)) dx
 \]
-Nei due tratti verticali si ha ${\bf T} = \pm \uvj$, 
+Nei due tratti verticali si ha ${\bf T} = \pm \uvj$,
 quindi ${\bf T} \cdot \uvi = 0$.\\
 Per concludere
 \[
-	\int_{\gamma} f(x,y)\uvi \cdot {\bf T} ds = 
+	\int_{\gamma} f(x,y)\uvi \cdot {\bf T} ds =
 	\int_a^b f(x, \alpha(x)) dx
 	- \int_a^b f(x, \beta(x)) dx=
 \]
@@ -242,9 +245,10 @@ e quindi
 	\int_{\gamma} f(x,y)\uvi \cdot {\bf T} ds =
 	- \int_{\Omega} \partial_y f (x,y) dx dy=
 \]
-Il teorema diventa estendibile anche a domini non normali, data la possibilit\`a di scomporre un dominio qualsiasi in domini normali.
+Il teorema diventa estendibile anche a domini non normali, data la possibilit\`a
+di scomporre un dominio qualsiasi in domini normali.
 
-Analoga dimostrazione pu\`o essere fatta per la formula restante, in questo 
+Analoga dimostrazione pu\`o essere fatta per la formula restante, in questo
 caso utilizzando un dominio perpendicolare all'asse y.
 
 Per un campo $F= f_1 \uvi + f_2 \uvj$ si ottiene
@@ -260,7 +264,8 @@ cio\`e la formula di Stokes
 	= \int_{\Omega} (\partial_x f_2 - \partial_y f_1)dxdy
 \]
 nel piano. L'integrale doppio pu\`o essere visto come il flusso attraverso la
-superficie piana $\Omega$ di $rot F$ pensando ad $F= f_1 \uvi + f_2 \uvj +0\uvk$ nello spazio.\\
+superficie piana $\Omega$ di $rot F$ pensando ad $F= f_1 \uvi + f_2 \uvj +0\uvk$
+nello spazio.\\
 Inoltre, ricordando che
 \[
 	{\bf N} \cdot \uvi= {\bf T} \cdot \uvj, \;\;\;
@@ -282,7 +287,8 @@ che \`e il teorema della divergenza nel piano
 	\int_{\gamma} F \cdot {\bf N} ds=
 	\int_{\Omega} div F \; dxdy
 \]
-Le formule di Gauss-Green e le loro conseguenze forniscono importati applicazioni
+Le formule di Gauss-Green e le loro conseguenze forniscono importati
+applicazioni
 al Laplaciano.
 
 Per $F= \nabla u$, il teorema della divergenza diventa
@@ -299,8 +305,8 @@ Applicando poi il teorema della divergenza al campo
 \]
 si ha
 \[
-	div(vF)= v_x f_1 + v_y f_2 + 
-	v \left( \frac{\partial}{\partial_x} f_1 
+	div(vF)= v_x f_1 + v_y f_2 +
+	v \left( \frac{\partial}{\partial_x} f_1
 	+ \frac{\partial}{\partial_y} f_2 \right)
 \]
 \[
@@ -368,7 +374,7 @@ Se $u_1$ $u_2$ sono due soluzioni allora
 \[
 	w=u_1- u_2
 \]
-risolve 
+risolve
 \[
 	\Delta w = 0 \;\;\; \text{in} \;\;\; \Omega
 \]
@@ -379,10 +385,10 @@ con condizioni al contorno
 		\partial_{\bf N}w=0 & \text{in } \gamma & \text{Neumann}\\
 	\end{array}
 \]
-Sostituendo $u=v=w$ nella formula dell'integrale per parti 
+Sostituendo $u=v=w$ nella formula dell'integrale per parti
 (equivalente ad usare il campo $div\, (ww)= div\, w^2$)
 \[
-	\int_{\Omega} w \Delta w \, dxdy= 
+	\int_{\Omega} w \Delta w \, dxdy=
 	- \int_{\Omega} \nabla w \cdot \nabla w \, dxdy
 	+ \int_{\gamma} w \partial_{\bf N} w \, ds
 \]
@@ -399,7 +405,7 @@ Perci\`o, data la definizione $\Delta w= 0$,
 \[
 	\int_{\Omega} \left|\left| \nabla w \right|\right|^2 \, dxdy = 0
 \]
-L'unica soluzione, essendo somma di quadrati, \`e 
+L'unica soluzione, essendo somma di quadrati, \`e
 \[
 	\nabla w=0
 \]
@@ -409,7 +415,8 @@ in $\Omega$. Quindi
 \]
 Questo pone l'unicit\`a a meno di costanti nel caso di Neumann.\\
 Per Dirichlet deve essere $w=c=0$ in $\gamma$ (o almeno $\gamma_0$),
-quindi $w=0$ ovunque nella chiusura $\bar{\Omega}= \Omega \cup \gamma$ di $\Omega$.
+quindi $w=0$ ovunque nella chiusura $\bar{\Omega}= \Omega \cup \gamma$ di
+$\Omega$.
 \section{Propriet\`a di media}
 Sia $u(x,y)$ armonica in $\Omega \leq \mathbb{R}^2$
 \[
@@ -421,7 +428,7 @@ orientata positivamente.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{mean_f.pdf}
-	\caption{Circonferenza di frontiera $\gamma_R$}
+	\caption{Circonferenza di frontiera $\gamma_R$.}
 	\label{mean_f}
 \end{figure}
 \noindent
@@ -439,7 +446,7 @@ In tale dominio circolare valgono le formule di media
 \]
 con $ds$ l'elemento di lunghezza sulla circonferenza.
 \subsubsection{Dimostrazione}
-Iniziamo dalla seconda. Per $0<\pi<R$ poniamo 
+Iniziamo dalla seconda. Per $0<\pi<R$ poniamo
 \[
 	g(r)= \frac{1}{2\pi r}
 	\int \limits_{\gamma_r}
@@ -463,11 +470,12 @@ dove si \`e usata la parametrizzazione di $\gamma_r(x,y)$
 	\right.
 \]
 con $0 \leq \theta \leq 2\pi$.\\
-Dove $x'=-rsin \theta$, $y'= rcos \theta$, $ds= \sqrt{(x')^2+ (y')^2}= rd\theta$.\\
+Dove $x'=-rsin \theta$, $y'= rcos \theta$, $ds= \sqrt{(x')^2+ (y')^2}=
+rd\theta$.\\
 Derivando $g(r)$ abbiamo
 \[
 	g'(r)= \frac{1}{2\pi}
-	\int_0^{2\pi} 
+	\int_0^{2\pi}
 	\left(
 		u_x cos\theta + u_y sin \theta
 	\right)d\theta=
@@ -487,11 +495,11 @@ Per il teorema della divergenza
 	\int \limits_{\Omega_r} \Delta u \, dxdy= 0
 \]
 cio\`e $g(r)$ costante.\\
-Poich\'e 
+Poich\'e
 \[
 	\lim_{r \to 0} g(r)=
 	\lim_{r \to 0} \frac{1}{2 \pi}
-	\int_0^{2\pi} 
+	\int_0^{2\pi}
 	u(\bar{x}+rcos \theta, \bar{y} + rsin \theta) \, d\theta=
 	\frac{1}{2 \pi} \int_0^{2\pi}
 	u(\bar{x}, \bar{y}) d\theta
@@ -536,14 +544,16 @@ armonica. Da questa equivalenza seguir\`a poi che ogni funzione armonica \`e
 $C^{\infty}$.
 \subsection{Principi di massimo}
 Una funzione che soddisfa la propriet\`a di media in $\Omega$ che non sia
-una funzione costante non pu\`o avere massimi o minimi globali interni ad $\Omega$.
+una funzione costante non pu\`o avere massimi o minimi globali interni ad
+$\Omega$.
 Per vedere questo, basta vedere che se $u(x,y)$ in $\Omega$ assume valore
-minimo (massimo) assoluto in $(\bar{x}, \bar{y})$ interno ad $\Omega$, 
+minimo (massimo) assoluto in $(\bar{x}, \bar{y})$ interno ad $\Omega$,
 allora \`e costante in ogni cerchio $\Omega_R(\bar{x}, \bar{y})\subset \Omega$.
 Se vale questo, infatti, tutti i punti di $\Omega_R(\bar{x}, \bar{y})$ diventano
 di minimo (massimo) assoluto.
 Il centro $(\bar{x}, \bar{y})$ pu\`o essere sostituito dai punti arbitrariamente
-vicini al bordo di $\Omega_R(\bar{x}, \bar{y})$ e la regione dove $u$ \`e costante
+vicini al bordo di $\Omega_R(\bar{x}, \bar{y})$ e la regione dove $u$ \`e
+costante
 pu\`o essere allargata.
 Con questo procedimento si giunge a far vedere che $u$ \`e costante su tutto
 l'aperto e connesso $\Omega$.
@@ -552,7 +562,8 @@ La  funzione $u$ soddisfi le propriet\`a di media in $\Omega$.
 Se $u(\bar{x}, \bar{y})=m$ \`e minimo assoluto allora $u(x,y)=m$ in tutti
 i punti di $\Omega_R(\bar{x}, \bar{y})\subset \Omega$.
 \subsubsection{Dimostrazione}
-Supponiamo che $u(x,y)\geq m_1 > m$ in $\Omega_r (x_0, y_0)\subset \Omega_R (\bar{x}, \bar{y})$.
+Supponiamo che $u(x,y)\geq m_1 > m$ in $\Omega_r (x_0, y_0)\subset \Omega_R
+(\bar{x}, \bar{y})$.
 Allora
 \[
 	m= u(\bar{x}, \bar{y})=
@@ -561,15 +572,17 @@ Allora
 \]
 \[
 	= \frac{1}{\pi R^2} \left\{
-	\int \limits_{\mathrlap{\Omega_R (\bar{x}, \bar{y}) - \Omega_r (x_0,y_0)}}
-	u(x,y) \, dxdy + 
+	\int \limits_{\mathrlap{\Omega_R (\bar{x}, \bar{y}) - \Omega_r
+(x_0,y_0)}}
+	u(x,y) \, dxdy +
 	\int \limits_{\mathrlap{\Omega_r (x_0,y_0)}}
-	u(x,y) \, dxdy + 
+	u(x,y) \, dxdy +
 	\right\}
 \]
 \[
 	\geq \frac{1}{\pi R^2} \left\{
-	\int \limits_{\mathrlap{\Omega_R (\bar{x}, \bar{y}) - \Omega_r (x_0,y_0)}}
+	\int \limits_{\mathrlap{\Omega_R (\bar{x}, \bar{y}) - \Omega_r
+(x_0,y_0)}}
 	m \, dxdy \;\;\;\; + \;\;\;\;
 	\int \limits_{\mathrlap{\Omega_r (x_0,y_0)}}
 	m_1 \, dxdy
@@ -577,14 +590,15 @@ Allora
 \]
 \[
 	= \frac{1}{\pi R^2} \left\{
-	m \cdot \text{Area} \left( \Omega_R (\bar{x}, \bar{y}) - \Omega_r (x_0,y_0) \right) +
+	m \cdot \text{Area} \left( \Omega_R (\bar{x}, \bar{y}) - \Omega_r
+(x_0,y_0) \right) +
 	m_1 \cdot \text{Area} \left(\Omega_r (x_0,y_0) \right)
-	\right\} 
+	\right\}
 \]
 \[
 	= \frac{1}{\pi R^2} \left\{
 	m (\pi R^2 - \pi r^2) + m_1 \pi r^2
-	\right\} 
+	\right\}
 \]
 \[
 	> \frac{1}{\pi R^2} \left\{
@@ -596,7 +610,7 @@ Siamo all'assurdo
 \[
 	m>m
 \]
-La funzione $u$ non pu\`o assumere valori $m_1>m$ all'interno di 
+La funzione $u$ non pu\`o assumere valori $m_1>m$ all'interno di
 $\Omega_R(\bar{x}, \bar{y})$.
 Analogo risultato vale per i punti di massimo.
 \subsubsection{Teorema}
@@ -605,7 +619,7 @@ se $u$ ha minimo o massimo assoluti interni ad $\Omega$, allora $u$ \`e costante
 in $\Omega$.
 \subsubsection{Lemma}
 Se $\Omega$ \`e limitato ed $u$ \`e continua nella chiusura $\bar{\Omega}$,
-allora ha certamente massimo e minimo assoluti in $\bar{\Omega}$ per il 
+allora ha certamente massimo e minimo assoluti in $\bar{\Omega}$ per il
 teorema di Weierstrass. Questi valori non possono essere assunti nei punti
 interni, a meno che non sia costante, quindi sono assunti sulla frontiera.
 
@@ -623,11 +637,12 @@ e soddisfa la propriet\`a di media in $\Omega$, allora
 	\max_{\bar{\Omega}} |u|= \max_{\gamma} |u|
 \]
 con $\gamma$ la frontiera di $\Omega$.\\
-Qualitativamente, l'unico punto in cui l'eventuale $u(\bar{x}, \bar{y})$ pu\`o 
-essere massimo o minimo \`e sulla frontiera, dove $\gamma_r$ ha diametro 
+Qualitativamente, l'unico punto in cui l'eventuale $u(\bar{x}, \bar{y})$ pu\`o
+essere massimo o minimo \`e sulla frontiera, dove $\gamma_r$ ha diametro
 infinitesimo e il valore all'interno di $\gamma_r$ pu\`o essere considerato
-costante. In tutti gli altri casi deve essere sulla frontiera di $\gamma_r$; 
-perci\`o preso il dominio $\bar{\Omega}$, i minimi e massimi possono essere solo sulla frontiera.
+costante. In tutti gli altri casi deve essere sulla frontiera di $\gamma_r$;
+perci\`o preso il dominio $\bar{\Omega}$, i minimi e massimi possono essere solo
+sulla frontiera.
 \section{Unicit\`a e dipendenza continua dai dati}
 Presa una funzione armonica, essa soddisfa la propriet\`a di media.
 Attraverso di essa possiamo dedurre un risultato di unicit\`a e dipendenza
@@ -650,7 +665,8 @@ Inoltre, se $u_g$ indica la soluzione corrispondente al dato $g$, si ha
 	\max_{\gamma} \left| g_1 - g_2 \right|
 \]
 \subsubsection{Dimostrazione}
-La funzione $u_{g_1} - u_{g_2}$ \`e armonica in $\Omega$ e continua in $\bar{\Omega}$.\\
+La funzione $u_{g_1} - u_{g_2}$ \`e armonica in $\Omega$ e continua in
+$\bar{\Omega}$.\\
 $\left| u_{g_1} - u_{g_2} \right|$ ha massimo in $\bar{\Omega}$, assunto sulla
 frontiera $\gamma$. \\ Dunque
 \[
@@ -664,18 +680,20 @@ Ora se $g_1=g_2$ allora da questo segue $g_1=g_2$ in $\bar{\Omega}$, cio\`e
 l'unicit\`a della soluzione.
 \section{Esistenza della soluzione}
 I teoremi di esistenza sono pi\`u difficili di quelli di unicit\`a.
-I lcaso pi\`u semplice \`e quello di $\Omega$ cerchio nel piano dove si 
+I lcaso pi\`u semplice \`e quello di $\Omega$ cerchio nel piano dove si
 possono utilizzare le coordinate polari. \`E quindi necessario procurarsi
 l'espressione di $\Delta$ in queste coordinate.
-\footnote{Vedi anche 
+\footnote{Vedi anche
 \url{http://www1.mate.polimi.it/~bramanti/corsi/archivio_pdf/laplaciano.pdf}}
 \subsection{Laplaciano in coordinate polari}
-Per $u(r(x,y), \theta (x,y))$, ricordando che 
+Per $u(r(x,y), \theta (x,y))$, ricordando che
 \[
-	\partial_x r= \partial_x\sqrt{x^2 + y^2}=\frac{x}{\sqrt{x^2 + y^2}}= cos \theta
+	\partial_x r= \partial_x\sqrt{x^2 + y^2}=\frac{x}{\sqrt{x^2 + y^2}}= cos
+\theta
 \]
 \[
-	\partial_y r= \partial_y\sqrt{x^2 + y^2}=\frac{y}{\sqrt{x^2 + y^2}}= sin \theta
+	\partial_y r= \partial_y\sqrt{x^2 + y^2}=\frac{y}{\sqrt{x^2 + y^2}}= sin
+\theta
 \]
 \[
 	\partial_x \theta= \partial_x arctan \frac{y}{x}=
@@ -687,20 +705,25 @@ Per $u(r(x,y), \theta (x,y))$, ricordando che
 \]
 si ha
 \[
-	\partial_x u= cos \theta \partial_r u - \frac{sin \theta}{r} \partial_{\theta} u
+	\partial_x u= cos \theta \partial_r u - \frac{sin \theta}{r}
+\partial_{\theta} u
 \]
 \[
-	\partial_y u= sin \theta \partial_r u + \frac{cos \theta}{r} \partial_{\theta} u
+	\partial_y u= sin \theta \partial_r u + \frac{cos \theta}{r}
+\partial_{\theta} u
 \]
-Calcolando 
+Calcolando
 \[
-	\partial_x^2 u = \partial_x(\partial_x u)= 
-	\left( cos \theta \partial_r  - \frac{sin \theta}{r} \partial_{\theta} \right)
-	\left( cos \theta \partial_r u - \frac{sin \theta}{r} \partial_{\theta} u \right)
+	\partial_x^2 u = \partial_x(\partial_x u)=
+	\left( cos \theta \partial_r  - \frac{sin \theta}{r} \partial_{\theta}
+\right)
+	\left( cos \theta \partial_r u - \frac{sin \theta}{r} \partial_{\theta}
+u \right)
 \]
 ed eseguendo tutte le derivate e sommando si arriva a
 \[
-	\Delta u = \partial^2_r u + \frac{1}{r} \partial_r u +\frac{1}{r^2}\partial^2_{\theta} u 
+	\Delta u = \partial^2_r u + \frac{1}{r} \partial_r u
++\frac{1}{r^2}\partial^2_{\theta} u
 \]
 \subsection{Formula di Poisson}
 Risolviamo quindi il problema di Dirichlet nel cerchio
@@ -731,11 +754,12 @@ dove $w(\theta)$ deve essere periodica di periodo $2 \pi$.
 	\Downarrow
 \]
 \[
-	v''(r)w(\theta)+ \frac{1}{r^2}v(r)w''(\theta)+ \frac{1}{r}v'(r)w(\theta)=0
+	v''(r)w(\theta)+ \frac{1}{r^2}v(r)w''(\theta)+
+\frac{1}{r}v'(r)w(\theta)=0
 \]
 da cui, dividendo per $u= v(r)w(\theta)$ e moltiplicando per $r^2$
 \[
-	r^2 \frac{ v''(r)}{v(r)} + r \frac{v'(r)}{v(r)}= 
+	r^2 \frac{ v''(r)}{v(r)} + r \frac{v'(r)}{v(r)}=
 	-\frac{w''(\theta)}{w(\theta)}
 \]
 Le due funzioni possono coincidere solo se costanti
@@ -762,7 +786,7 @@ e
 Essa deve necessariamente avere periodo $2\pi$, cio\`e equivalente al periodo
 del cerchio che delimita il dominio (effettivamente dopo un giro \`e sempre
 la stessa soluzione).
-Il periodo indicato si ha solo per $\sqrt{k}= 0,1,2,\ldots$, quindi 
+Il periodo indicato si ha solo per $\sqrt{k}= 0,1,2,\ldots$, quindi
 $k= 0,1,4, \ldots$ in particolare $k=m^2$ con $m \in \mathbb{N}+\{0\}$.
 Abbiamo ottenuto le soluzioni
 \[
@@ -818,20 +842,22 @@ Per linearit\`a, se si pu\`o derivare sotto il segno di serie,
 	A_m r^m cos(m \theta)+ B_m r^m sin (m \theta)
 \]
 \`e una soluzione di $\Delta u=0$ nel cerchio, con $A_m$, $B_m$ coefficienti
-tali che $u$ sia ancora soluzione di $\Delta u= 0$ derivando termine a termine.\\
+tali che $u$ sia ancora soluzione di $\Delta u= 0$ derivando termine a
+termine.\\
 Per $r=R$ deve essere $u=g$; la condizione si realizza con
 \[
 	u(R, \theta)= G(\theta)= g(\bar{x}+ Rcos \theta, \bar{y} + Rsin\theta)
 \]
 si scrive la serie di Fourier di $G$
 \[
-	G(\theta) \sim \frac{a_0}{2}+ 
+	G(\theta) \sim \frac{a_0}{2}+
 	\sum_{m=1}^{\infty} a_m cos (m \theta) + b_m sin (m \theta)
 \]
 dove i coefficienti sono dati da
 \[
 	a_m = \frac{1}{\pi}
-	\int_{0}^{2 \pi} G(\theta)cos(m \theta) d\theta \; , \;\;\; m=0,1,2,\ldots
+	\int_{0}^{2 \pi} G(\theta)cos(m \theta) d\theta \; , \;\;\;
+m=0,1,2,\ldots
 \]
 \[
 	b_m = \frac{1}{\pi}
@@ -856,7 +882,8 @@ risolve
 	\end{array}
 	\right.
 \]
-Tale soluzione \`e in realt\`a $C^{\infty}$ all'interno di $\Omega_R (\bar{x}, \bar{y})$
+Tale soluzione \`e in realt\`a $C^{\infty}$ all'interno di $\Omega_R (\bar{x},
+\bar{y})$
 e continua nel cerchio chiuso. Come gi\`a sappiamo, \`e l'unica soluzione.
 Vogliamo ora semplificarne l'espressione. Per evitare incomprensioni con la
 notazione, riscriviamo i coefficienti
@@ -917,7 +944,7 @@ quindi
 	{R^2 + r^2 -2Rrcos(\phi - \theta)}
 	-1
 \]
-La soluzione si scrive 
+La soluzione si scrive
 \[
 	u= \frac{1}{\pi} \int_{0}^{2\pi} G(\phi)
 	\left( \frac{1}{2}+
@@ -928,7 +955,7 @@ La soluzione si scrive
 \]
 \[
 	= \frac{1}{2 \pi} \int_{0}^{2\pi} G(\phi)
-	\frac{R^2 + r^2 -\cancel{2Rrcos(\phi - \theta)} + 
+	\frac{R^2 + r^2 -\cancel{2Rrcos(\phi - \theta)} +
 	\cancel{2Rrcos(\phi - \theta)} -2r^2 }
 	{R^2 + r^2 -2Rrcos(\phi - \theta)}
 	d\phi
@@ -942,22 +969,22 @@ La soluzione si scrive
 I termini da infiniti sono diventati un termine singolo.\\
 Torniamo alle variabili cartesiane
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{ll}
-		x= x(r, \theta)= \bar{x} + rcos \theta 
+		x= x(r, \theta)= \bar{x} + rcos \theta
 		& \text{in } \Omega_R (\bar{x},\bar{y}) \\
 		y= y(r, \theta)= \bar{y} + rsin \theta
 	\end{array}
 	\right.
 \]
 \[
-	\left\{ 
+	\left\{
 	\begin{array}{ll}
 		\sigma= \sigma(\phi)= \bar{x} + Rcos \phi
 		& \text{in } \gamma_R (\bar{x},\bar{y}) \\
 		\eta= \eta(\phi)= \bar{y} + Rsin \phi
 	\end{array}
-	\right. 
+	\right.
 \]
 infatti con $r=R \follows \theta \longrightarrow \phi$ \\
 la quantit\`a
@@ -968,7 +995,7 @@ la quantit\`a
 \]
 Attraverso il teorema del coseno\footnote{Vedi anche
 \url{http://wikipedia.org/wiki/Law_of_cosines}
-} (o di Carnot) oppure utilizzando le espressioni di 
+} (o di Carnot) oppure utilizzando le espressioni di
 $x (r, \theta)$, $y(r, \theta)$, $\sigma (\phi)$, $\eta (\phi)$ (l'angolo
 opposto ad $a$ \`e $\phi - \theta$)
 \[
@@ -977,7 +1004,7 @@ a^2= R^2 +r^2 -2Rrcos(\phi - \theta)
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{car_th.pdf}
-	\caption{Teorema di Carnot}
+	\caption{Teorema di Carnot.}
 	\label{car_th}
 \end{figure}
 
@@ -998,8 +1025,9 @@ Provando con $(x,y)=(\bar{x},\bar{y})$ si ottiene la prima formula di media.
 	\int_{\gamma_r} g ds=
 \]
 \subsubsection{Riassumendo}
-Sia $g$ continua. L'unica soluzione 
-$u \in C^2 (\Omega_R (\bar{x}, \bar{y})) \cap C( \bar{ \Omega}_R (\bar{x}, \bar{y}))$ di
+Sia $g$ continua. L'unica soluzione
+$u \in C^2 (\Omega_R (\bar{x}, \bar{y})) \cap C( \bar{ \Omega}_R (\bar{x},
+\bar{y}))$ di
 \[
 	\left\{
 	\begin{array}{ll}
@@ -1011,7 +1039,8 @@ $u \in C^2 (\Omega_R (\bar{x}, \bar{y})) \cap C( \bar{ \Omega}_R (\bar{x}, \bar{
 \`e data da
 \[
 	u(x,y)= \frac{r^2 - (x - \bar{x})^2 - (y -\bar{y})^2}{2 \pi R}
-	\int_{\gamma_R} \frac{g(\sigma, \eta)}{(x - \sigma)^2+(y - \eta)^2} \; ds
+	\int_{\gamma_R} \frac{g(\sigma, \eta)}{(x - \sigma)^2+(y - \eta)^2} \;
+ds
 \]
 Tale soluzione \`e $C^{\infty}$ in $\Omega_R(\bar{x}, \bar{y})$.
 
@@ -1051,7 +1080,7 @@ con la formula di Poisson in $\Omega_R(\bar{x}, \bar{y})$.
 Per l'arbitrariet\`a di $\Omega_R(\bar{x}, \bar{y})$, ci\`o rimane vero in
 tutto $\Omega$.
 \subsection{L'equazione di Poisson}
-Il metodo della separazione delle variabili si pu\`o applicare anche al 
+Il metodo della separazione delle variabili si pu\`o applicare anche al
 problema non omogeneo
 \[
 	\left\{
@@ -1070,21 +1099,22 @@ con $T=2\pi$. Si pu\`o quindi scrivere in serie di Fourier.
 \[
 	f(r,\theta)= 	\frac{a_0(r)}{2}+  \sum_{m=1}^{\infty} \left[
 	a_m (r) cos (m \theta)+
-	b_m(r) sin (m\theta) 	
-	\right]	
+	b_m(r) sin (m\theta)
+	\right]
 \]
 Cerchiamo ora una soluzione dello stesso tipo
 \[
 	u(r,\theta)= 	\frac{A_0(r)}{2}+  \sum_{m=1}^{\infty} \left[
 	A_m (r) cos (m \theta)+
-	B_m(r) sin (m\theta) 	
-	\right]	
+	B_m(r) sin (m\theta)
+	\right]
 \]
 dove in questo caso i coefficienti sono incognite.\\
 Imponiamo, con il Laplaciano in coordinate polari, $\Delta u= f$ termine
 a termine.
 \[
-	\Delta = \partial_r^2 +\frac{1}{r}\partial_r + \frac{1}{r^2}\partial_{\theta}^2
+	\Delta = \partial_r^2 +\frac{1}{r}\partial_r +
+\frac{1}{r^2}\partial_{\theta}^2
 \]
 Si ottiene
 \begin{align*}
@@ -1116,7 +1146,8 @@ Sostituiamo $B_m(r)= y_m(ln \, r)$ quindi
 \]
 poi $t=ln \, r \follows r=e^t$, perci\`o
 \[
-	y_m''(t)- \cancel{y_m'(t)} + \cancel{y_m'(t)} - m^2 y_m(t)= e^{2t}b_m(e^t)
+	y_m''(t)- \cancel{y_m'(t)} + \cancel{y_m'(t)} - m^2 y_m(t)=
+e^{2t}b_m(e^t)
 \]
 Presa l'omogenea associata
 \[
@@ -1135,7 +1166,8 @@ trovata ad esempio con la variazione delle costanti\footnote{
 Vedi anche \url{http://wikipedia.org/wiki/Variation_of_parameters}}
 o, se il secondo membro lo permette, per similitudine.
 \[
-	B_m (r)= y_m(ln \, r) = C_{1m}r^m + \frac{C_{2m}}{r^m} + \bar{y}_m(ln \, r)
+	B_m (r)= y_m(ln \, r) = C_{1m}r^m + \frac{C_{2m}}{r^m} + \bar{y}_m(ln \,
+r)
 \]
 Si applicano ora le condizioni;\\
 quando $r=R \follows B_m (R)=0$
@@ -1170,7 +1202,8 @@ perci\`o
 	u= B(r) sin(2\theta)
 \]
 \[
-	\Delta = \partial_r^2 +\frac{1}{r}\partial_r + \frac{1}{r^2}\partial_{\theta}^2
+	\Delta = \partial_r^2 +\frac{1}{r}\partial_r +
+\frac{1}{r^2}\partial_{\theta}^2
 \]
 \[
 	\Delta u= \left(
@@ -1202,7 +1235,7 @@ perci\`o
 	y_1(t)= e^{2t} \;\;\; y_2(t)= e^{-2t}
 \]
 Ora cerco la soluzione particolare per similitudine (cio\`e usando
-generalmente $\bar{y}= c t^n f$, con $n$ in modo che non si annulli 
+generalmente $\bar{y}= c t^n f$, con $n$ in modo che non si annulli
 l'equazione differenziale).
 \[
 	\bar{y}= c e^{4t}
