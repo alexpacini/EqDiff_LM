@@ -10,12 +10,13 @@ Nel definire il modello si far\`a uso di:
 & e= \mbox{ energia interna per unit\`a di massa } \; [r]=\frac{[cal]}{[massa]}\\
 \end{align*}
 
-Il primo passo nella derivazione dell'equazione del calore consiste nell'applicare la \textit{Legge di Bilancio}:\\
+Il primo passo nella derivazione dell'equazione del calore consiste
+nell'applicare la \textit{Legge di Bilancio}:
 isolata una porzione $[x_0, x_0+h]$ della barra, il tasso di variazione dell'energia interna eguaglia il flusso agli estremi;
 nel caso di sorgente, il tasso di variazione del calore erogato sar\`a sommato al flusso agli estremi.
 \[
 	\underbrace{\frac{d}{dt}\int_{x_0}^{x_0+h} e(t,x)\rho
-dx}_\text{Variazione dell'energia rispetto al tempo}
+dx}_{\mathclap{\text{Variazione dell'energia rispetto al tempo}}}
 	= \overbrace{q(t,x_0)-q(t,x_0 +h)}^\text{Flusso entrante}
 	+\underbrace{\int_{x_0}^{x_0+h} r(t,x) \rho dx}_\text{Flusso della
 sorgente}
@@ -24,8 +25,7 @@ Per il Teorema Fondamentale del Calcolo Integrale
 \[
 	q(t,x_0)-q(t,x_0 +h) = -\int_{x_0}^{x_0+h} q_x(t,x)dx
 \]
-dove $q_x$ indica $\frac{dq}{dx}$.
-
+dove $q_x$ indica $\frac{dq}{dx}$.\\
 Considerando che l'espressione
 \[
 	\frac{d}{dt}\int_{x_0}^{x_0+h} e(t,x)\rho dx
@@ -40,11 +40,10 @@ in forma locale
 	\frac{\partial}{\partial t} e(t,x)\rho= -\frac{\partial}{\partial
 x}q(t,x)+\rho r(t,x)
 \]
-
 \`E ora necessario applicare le leggi costitutive, che risultano essere delle
 leggi sperimentali.\\
 La prima, che prende il nome di \textit{Legge di Fourier}, indica che il flusso
-di calore ($q$) \`e direttamente proporzionale
+di calore $q$ \`e direttamente proporzionale
 alla derivata spaziale della temperatura secondo la legge
 \[
 	q= -ku_x
@@ -71,13 +70,12 @@ che riordinata
 \[
 	u_t= \underbracket{D}_{\mathclap{\text{Risposta termica}}} u_{xx}+f
 \]
-dove $D=k/c_l\rho$ e $f=r/c_l$.
+dove $D=k/(c_l\rho)$ e $f=r/c_l$.
 \[
 	[D]=\frac{\cancel{[cal]}[lunghezza]}{[tempo]\cancel{[grado]}}\frac{
 \cancel{[massa]}\cancel{[grado]}}{\cancel{[cal]}}
 	\frac{[lunghezza]}{\cancel{[massa]}}=\frac{[lunghezza]^2}{[tempo]}
 \]
-
 L'equazione caratteristica risulta quindi essere, considerata l'equazione
 differenziale omogenea e sostituendo due variabili algebriche alle due variabili
 derivate
@@ -133,7 +131,7 @@ termine $D\left[u(t,x)u_x(t,x)\right]_0^L=0$ e quindi
 \[
 	E'(t)= - D \int_0^L u_x^2(t,x) dx \leq 0
 \]
-La derivata negativa indica che $E(t)\leq E(0)$, segue che
+La derivata negativa (o nulla) indica che $E(t)\leq E(0)$, segue che
 \[
 	\int_0^L u^2(t,x)dx \leq \int_0^L g^2 (x) dx
 \]
@@ -222,7 +220,7 @@ Essendo le variabili di integrazione diverse, equivale a dire
 \[
 	\frac{v'(t)}{v(t)}=K=D\frac{w''(x)}{w(x)}
 \]
-con $K$ una costante. Perci\`o si posso spezzare in due equazioni
+con $K$ una costante. Perci\`o si possono spezzare in due equazioni
 \[
 	\left\{
 	\begin{array}{l}
@@ -236,7 +234,7 @@ con $K$ una costante. Perci\`o si posso spezzare in due equazioni
 	v'(t)=Kv(t)
 \]
 Procediamo con il risolvere l'equazione differenziale di secondo grado;
-infatti essa imporr\`a dei vincoli su $K$.
+essa imporr\`a dei vincoli su $K$.
 \[
 	D\lambda^2-K=0
 \]
@@ -376,7 +374,7 @@ con $0\leq x \leq L$.\\
 Bisogna quindi trovare un modo per poter esprimere la funzione $g(x)$
 come serie di sinusoidi.\\
 Verifichiamo prima di tutto la convergenza.\\
-Si prenda una sequenza limitata dei coefficienti $b_n$, cio\`e che
+Si prenda una sequenza limitata dei coefficienti $b_n$, tale che
 $|b_n|\leq C$ per qualsiasi $n$, data $C$ una costante. Allora se $t \geq t_0 >
 0$
 e $0\leq x \leq L$
@@ -557,7 +555,8 @@ concentrata in $x=0$ al tempo $t=0$. Questo significa
 	\end{array}
 	\right.
 \]
-si utilizza la trasformata di Fourier rispetto ad $x$ di $u(x,t)$ definita da
+Si utilizzer\`a la trasformata di Fourier rispetto ad $x$ di $u(x,t)$ definita
+da
 \[
 	v(t,\lambda)=\int_{-\infty}^{+\infty} e^{-i\lambda x} u(t,x) dx
 \]
@@ -580,13 +579,11 @@ L'integrale generale dell'equazione vale
 \]
 che fissate le condizioni agli estremi
 \[
-	v(0,t)= 1 \;\;\; \Rightarrow \;\;\; c(\lambda)= 1
-\]
-\[
-	\Downarrow
-\]
-\[
+\begin{array}{c}
+	v(0,t)= 1 \;\;\; \Rightarrow \;\;\; c(\lambda)= 1\\
+	\Downarrow \\
 	v(t,\lambda)= e^{-D\lambda^2 t}
+\end{array}
 \]
 Si tratta di una trasformata notevole
 \[
@@ -717,8 +714,7 @@ In conclusione
 \[
 	v(t,x)= \sqrt{a}u(at, \sqrt{a}x)
 \]
-\`e ancora una soluzione con la stesa massa totale conservata ad ogni $t>0$.
-
+\`e ancora una soluzione con la stessa massa totale conservata ad ogni $t>0$.\\
 Le trasformazioni del tipo
 \[
 	t\Rightarrow at, \;\;\; x=\sqrt{a} x
@@ -804,11 +800,11 @@ fornisce tutti i coefficienti di indice pari, assegnato $a_0$, e tutti quelli
 dispari assegnato $a_1$.
 Del resto sappiamo che l'integrale generale dipende da due costanti arbitrarie.
 Se siamo alla ricerca di una soluzione che descriva la diffusione di una massa
-inizialmente concentrata in $x=0$, \`e naturale assumere la densit\`a abbia
+inizialmente concentrata in $x=0$, \`e naturale assumere che la densit\`a abbia
 simmetria pari per $t>0$, perci\`o $a_1=0$ e quindi tutti gli $a$ con indice
 dispari sono nulli.
 Stabiliti $a_0$ e $a_1$ si \`e stabilita tutta la serie, con $n\rightarrow
-\infty$
+\infty$.\\
 Per quanto riguarda i coefficienti pari
 \begin{align*}
 	& a_0=\ldots \\
@@ -944,8 +940,7 @@ tale che
 \[
 	\intR u(x)\phi(x)dx= \phi (0)
 \]
-Per ogni funzione test $\phi$.
-
+per ogni funzione test $\phi$.\\
 Questi funzionali lineari, muniti di una opportuna nozione di continuit\`a
 rispetto a $\phi$, si chiamano distribuzioni. Le distribuzioni sono
 derivabili di ogni ordine definendo una opportuna nozione di derivata,
@@ -1006,8 +1001,7 @@ in $x=0$ per $t=0$, l'integrale di densit\`a normale (gaussiana)
 \]
 descrive la probabilit\`a che una di queste particelle si trovi al tempo $t$
 nell'intervallo $[a,b]$, quindi la percentuale di particelle presenti in $[a,b]$
-al tempo $t$.
-
+al tempo $t$.\\
 Il dato iniziale
 \[
 	\Gamma_D(0,x)= \delta

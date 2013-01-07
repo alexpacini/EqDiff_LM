@@ -32,6 +32,7 @@ nel piano $x,u$
 	\caption{$u(t,x)$ con $t$ fissato.}
 	\label{wave_plane}
 \end{figure}
+\noindent
 La conservazione della massa si scrive
 \[
 	\rho ds= \rho_0 dx
@@ -57,6 +58,7 @@ quella a destra.
 	\caption{Tensione sulla corda.}
 	\label{tension}
 \end{figure}
+\noindent
 Indichiamo con $T(t,x)$ l'intensit\`a di ${\bf T}(t,x)$ e con $\alpha= \alpha
 (t,x)$
 l'inclinazione della corda rispetto alla posizione di riposo (asse $x$).
@@ -69,6 +71,7 @@ l'inclinazione della corda rispetto alla posizione di riposo (asse $x$).
 	\caption{Tensione sulla corda con $\alpha$ mostrato.}
 	\label{tension_alpha}
 \end{figure}
+\noindent
 Il bilancio della componente orizzontale della tensione in un breve intervallo
 $[x,x+\Delta x]$ impone
 \[
@@ -115,7 +118,7 @@ corrispondente a $[x, x+ \Delta x]$. Tenendo conto di $sin(\alpha + \pi)= - sin
 Essendo una trazione, essa corrisponde ad una forza.\\
 Denotiamo ora con $f(t,x)$ gli eventuali carichi totali per unit\`a di massa; se
 il
-peso non \`e trascurabile $f(t,x)= -g + F(t,x)$ dove $g$ \`e l'accelerazione
+peso non \`e trascurabile $f(t,x)= -g + F(t,x)$, dove $g$ \`e l'accelerazione
 di gravit\`a ed $F$ corrisponde ad altri ulteriori carichi. Quindi
 \[
 	=\tau \int_x^{x+\Delta x} u_{xx}(t,y) dy +
@@ -147,13 +150,13 @@ che pu\`o essere scritta
 \]
 Per l'arbitrariet\`a del tratto $[x, x+ \Delta x]$, deve essere
 \[
-	\rho_0 u_{tt} - \tau u_{xx}-  \rho_0 f
+	\rho_0 u_{tt} - \tau u_{xx}-  \rho_0 f =0
 \]
 Dividendo per $\rho_0$ ed indicando $c^2=\tau / \rho_0$ si ha l'equazione
 \[
 	u_{tt} - c^2 u_{xx} = f
 \]
-La costante $c$ ha la dimensione di una velocit\`a.
+dove la costante $c$ ha la dimensione di una velocit\`a.
 \section{Problemi ben posti con lunghezza finita}
 Esistenza, unicit\`a e dipendenza continua dai dati si hanno imponendo le
 condizioni iniziali
@@ -205,7 +208,7 @@ e l'energia potenziale vale
 \[
 	E_{pot}(t)= \frac{1}{2} \int_0^L \tau u^2_x (t,x)dx
 \]
-e l'energia totale \`e data da
+mentre l'energia totale \`e data da
 \[
 	E(t)= \frac{1}{2}\int_0^L \left[
 	\rho_0 u^2_t + \tau u_x^2
@@ -227,7 +230,8 @@ avendo considerato continue le derivate e quindi lecito applicare il
 teorema di Schwartz per invertire l'ordine di integrazione. Quindi
 \[
 	\int_0^L u_x u_{tx}dx=
-	\underbracket{\left[ u_x(t,L) u_t(t,L) -  u_x(t,0) u_t(t,0) \right]}_{
+	\tau \underbracket{\left[ u_x(t,L) u_t(t,L) -  u_x(t,0) u_t(t,0)
+\right]}_{
 	G(t)} -
 	\int_0^L u_t u_{xx} dx
 \]
@@ -938,7 +942,7 @@ La soluzione perci\`o
 	a(\lambda)= {\mathscr{F} \left( A(x) \right)} \;\;\;
 	b(\lambda)= {\mathscr{F} \left( B(x) \right)}
 \]
-mentre il prodotto per un fasore trasla di $ct$.
+Inoltre il prodotto per un fasore trasla di $ct$.
 Quindi
 \[
 	u(t,x)= A(x+ct) + B(x-ct)
@@ -992,8 +996,8 @@ che antitrasformando
 \[
 	\left\{
 	\begin{array}{l}
-		A(x)=\frac{1}{2}g + \frac{1}{2c}H \\
-		B(x)=\frac{1}{2}g - \frac{1}{2c}H
+		\displaystyle{ A(x)=\frac{1}{2}g + \frac{1}{2c}H }\\\\
+		\displaystyle{ B(x)=\frac{1}{2}g - \frac{1}{2c}H }
 	\end{array}
 	\right.
 \]

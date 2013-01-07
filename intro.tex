@@ -1,23 +1,29 @@
-Partendo dalle leggi generali (conservazione, bilancio di massa, energia, ecc) e dalle leggi costitutive si andranno a definire
-i vari modelli matematici composti dall'equazione (o sistema di equazioni) alle derivate parziali che governano i vari fenomeni fisici associati.
-Attraverso l'imposizione di condizioni iniziali e/o condizioni al contorno si dimostra l'esistenza, l'unicit\`a della soluzione e la dipendenza continua
+Partendo dalle leggi generali (conservazione, bilancio di massa, energia, ecc) e
+dalle leggi costitutive, si andranno a definire
+i vari modelli matematici composti dall'equazione (o sistema di equazioni) alle
+derivate parziali che governano i vari fenomeni fisici associati.
+Attraverso l'imposizione di condizioni iniziali e/o condizioni al contorno si
+dimostra l'esistenza, l'unicit\`a della soluzione e la dipendenza continua
 dai dati iniziali.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\texorpdfstring
 {Classificazione delle Equazioni di II ordine in due variabili ($t,x$)}
 {Classificazione delle Equazioni di II ordine in due variabili (t,x)}}
-La forma completa di un' equazioni di II ordine in due variabili pu\`o essere espressa come segue
+La forma completa di un equazione di II ordine in due variabili pu\`o essere
+espressa come segue
 \[
-	\underbrace{au_{tt}+2bu_{xt}+cu_{xx}}_\text{parte principale} + 
+	\underbrace{au_{tt}+2bu_{xt}+cu_{xx}}_\text{Parte principale} +
 	du_t + eu_x + hu = f
 \]
 con $a>0$.
-Considerando quindi la parte principale e sostituendo la derivata rispetto a $t$ con la variabile simbolica $p$ mentre la derivata 
+Considerando quindi la parte principale e sostituendo la derivata rispetto a $t$
+con la variabile simbolica $p$ mentre la derivata
 rispetto a $x$ con $q$, si pu\`o scrivere
 \[
 	ap^2 + 2bpq + cq^2 = tr(AH)
 \]
-dove $A$ \`e la matrice associata all'equazione differenziale e $H$ \`e la matrice Hessiana di $u$.
+dove $A$ \`e la matrice associata all'equazione differenziale e $H$ \`e la
+matrice Hessiana di $u$.
 \[
 A=
  \begin{pmatrix}
@@ -32,7 +38,8 @@ H=
   \partial_{xt} & \partial_{xx}
  \end{pmatrix}
 \]
-\`E ora possibile classificare le equazioni differenziali in base alla matrice $A$.
+\`E ora possibile classificare le equazioni differenziali in base alla matrice
+$A$.
 %
 \begin{align*}
 & A \mbox{ indefinita }  \Rightarrow  \mbox{ iperbolica}\\
@@ -48,7 +55,8 @@ Infatti, definito $\Delta=b^2-4ac$, se
 & \Delta<0 \Rightarrow tr(AH)=1 \mbox{ indica un'ellisse }
 \end{align*}
 %
-La classificazione si estende in maniera naturale ad equazioni in $n>2$ variabili.
+La classificazione si estende in maniera naturale ad equazioni in $n>2$
+variabili.
 
 {\bf Esempi noti}
 \[
@@ -58,5 +66,7 @@ La classificazione si estende in maniera naturale ad equazioni in $n>2$ variabil
 	u_{tt} - c^2 u_{xx}=f &\mbox{ eq. delle onde: iperbolica }
 \end{array}
 \]
-Un'equazione pu\`o anche essere di tutti e tre i tipi, ne \`e un esempio l'equazione di Eulero-Tricomi ($u_{tt}-tu_{xx}=f$), che per $t>0$ \`e iperbolica,
-per $t=0$ parabolica e per $t<0$ ellittica. 
+Un'equazione pu\`o anche essere di tutti e tre i tipi, ne \`e un esempio
+l'equazione di Eulero-Tricomi ($u_{tt}-tu_{xx}=f$), che per $t>0$ \`e
+iperbolica,
+per $t=0$ parabolica e per $t<0$ ellittica.
