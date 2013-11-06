@@ -1,7 +1,7 @@
 # Appunti del corso "EQUAZIONI DIFFERENZIALI LM"
 ## Basati sulle dispense e corso del Prof. Massimo Cicognani
 
-[Laurea Magistrale in Ingegneria elettronica e telecomunicazioni per lo sviluppo sostenibile - Website](http://goo.gl/KG5W9q)
+[Laurea Magistrale in Ingegneria elettronica e telecomunicazioni per lo sviluppo sostenibile - Università di Bologna, Campus di Cesena](http://goo.gl/WwgFO1)
 
 [QUI il PDF](http://alexpacini.github.io/EqDiff_LM/Eq_diff_LS.pdf)
 
