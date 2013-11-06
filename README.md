@@ -1,5 +1,5 @@
-# EQUAZIONI DIFFERENZIALI LM
-## Appunti del corso, basati sulle dispense e corso del Prof. Massimo Cicognani
+# Appunti del corso "EQUAZIONI DIFFERENZIALI LM"
+## Basati sulle dispense e corso del Prof. Massimo Cicognani
 
 [Laurea Magistrale in Ingegneria elettronica e telecomunicazioni per lo sviluppo sostenibile - Website](http://goo.gl/KG5W9q)
 
