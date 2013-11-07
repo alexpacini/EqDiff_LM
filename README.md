@@ -13,3 +13,6 @@ Sono disponibili con licenza [CC BY-NC license](https://creativecommons.org/lice
 
 Buon divertimento,  
 Alex Pacini
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexpacini/eqdiff_lm/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
