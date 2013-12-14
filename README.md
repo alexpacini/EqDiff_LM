@@ -15,6 +15,6 @@ Sono disponibili con licenza [CC BY-NC license](https://creativecommons.org/lice
 Buon divertimento,  
 Alex Pacini
 
-[![githalytics.com alpha](https://cruel-carlota.gopagoda.com/54160bb33b16e558258343a1807422ff "githalytics.com")](http://githalytics.com/alexpacini/EqDiff_LM)
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/c7e5913693e66a00016c20996b04d47f "githalytics.com")](http://githalytics.com/alexpacini/EqDiff_LM)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexpacini/eqdiff_lm/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
